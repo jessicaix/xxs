@@ -1,0 +1,49 @@
+.path-node-52 {
+  .field--name-field-text {
+    font-family: $font-family-medium;
+    font-size: 26px;
+    h2 {
+      font-family: $font-family-bold;
+      font-size: 48px;
+      text-transform: none;
+    }
+  }
+}
+#block-views-block-jobs-block-1 {
+  .views-row,
+  .view-header {
+    position: relative;
+    float:left;
+    width: 33.33333%;
+    min-height: 400px;
+    padding: 60px 15px 50px 70px;
+    font-size: 24px;
+    border-right: 2px solid $gray-lighter;
+  }
+  .views-row {
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .small {
+    font-size: 27px;
+  }
+  h2 {
+    font-family: $font-family-extrabold;
+    font-size: 32px;
+    text-transform: none;
+    margin-bottom: 35px;
+  }
+  .link,
+  .views-field-view-node {
+    position: absolute;
+    bottom: 50px;
+    margin: 0;
+    a {
+      background:url(../images/arrow_right.png) no-repeat right center;
+      font-weight: $font-family-semibold;
+      font-size: 24px;
+      padding:3px 30px 3px 0;
+    }
+  }
+}

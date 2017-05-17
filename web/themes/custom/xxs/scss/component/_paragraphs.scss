@@ -1,0 +1,301 @@
+// Paragraphs
+.paragraph {
+  margin:0 15px;
+  
+  .field--name-field-title,
+  .field--name-field-subtitle {
+    line-height: 0.9;
+  }
+  .field--name-field-text {
+    p {
+      line-height: 1.4;
+    }
+  }
+}
+
+// Header paragraph
+.paragraph--type--header {
+  position: relative;
+  background:url(../images/header_bg.png) no-repeat center center;
+  color:#FFF;
+  height: 793px;
+  overflow: hidden;
+  background-size: cover;
+  video {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .header-content {
+    display: inline-table;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    .field--name-field-title {
+      font-family: $font-family-extrabold;
+      font-size: 110px;
+      text-transform: uppercase;
+    }
+    .field--name-field-subtitle {
+      font-family: $font-family-semibold;
+      font-size: 30px;
+      margin-top:60px;
+    }
+    .field--name-field-button {
+      margin-top:100px;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Text paragraph
+.paragraph--type--text {
+  font-family: $font-family-semibold;
+  font-size: 30px;
+  text-align: center;
+  padding: 200px 0 140px;
+  .small {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: $font-family-extrabold;
+    margin:35px auto 50px;
+  }
+  p {
+    max-width: 940px;
+    margin:0 auto 20px;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .button {
+    margin-top:145px;
+    text-decoration: none;
+  }
+}
+
+// Campaign paragraph 
+.paragraph--type--campaign {
+  position: relative;
+  background:url(../images/header_bg.png) no-repeat center center;
+  color:#FFF;
+  min-height: 793px;
+  background-size: cover;
+  font-size: 80px;
+  margin: 0;
+  video {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .campaign-content {
+    display: inline-table;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    h3 {
+      font-family: $font-family-base;
+      color: #fff;
+      font-size: 20px;
+      margin:0 auto 45px;
+    }
+    a {
+      color: #FFF;
+      font-size: 25px;
+    }
+  }
+  .field--name-field-image {
+    img {
+      width: 100%;
+    }
+  }
+  .field--name-field-subtitle {
+    font-family:$font-family-extrabold;
+    margin-top: 15px;
+  }
+  .field--name-field-button {
+    margin-top: 45px;
+  }
+}
+
+// Clients paragraph
+.paragraph--type--client {
+  background-color: $gray-light;
+  text-align: center;
+  margin: 0;
+  padding: 130px 0 100px;
+  h3 {
+    font-family: $font-family-base;
+    font-size: 20px;
+    margin: 0;
+  }
+  .field--name-field-title {
+    font-family: $font-family-bold;
+    font-size: 100px;
+    color: $black;
+    text-transform: uppercase;
+    margin:90px 0 55px;
+  }
+  .field--name-field-text {
+    font-family: $font-family-medium;
+    span {
+      font-family: $font-family-base;
+    }
+  }
+  .field--name-field-clients {
+    float:left;
+    width: 100%;
+    padding: 10px 0 30px;
+  }
+  .client {
+    float:left;
+    width: 20%;
+    h2 {
+      display: none;
+    }
+    .content {
+      position: relative;
+      margin: 50px 0;
+      &:hover {
+        img {
+          -webkit-filter: inherit;
+          filter: inherit;
+          filter: inherit;
+        }
+      }
+      img {
+        -webkit-filter: grayscale(1); 
+        filter: gray; 
+        filter: grayscale(1);
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease;
+      }
+    }
+    .field--name-field-link {
+      a {
+        -webkit-filter: grayscale(1);
+        filter: gray;
+        filter: grayscale(1);
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        float: left;
+        text-indent: -9999px;
+        &:hover,
+        &:focus {
+          -webkit-filter: grayscale(1);
+          filter: gray;
+          filter: grayscale(1);
+        }
+      }  
+    }
+  }
+  .field--name-field-extra-text {
+    font-family: $font-family-medium;
+  }
+}
+
+// Two column text paragraph
+.paragraph--type--two-column-text {
+  padding: 240px 0 160px;
+  margin: auto;
+  .field--name-field-title {
+    font-family: $font-family-medium;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .field--name-field-subtitle {
+    font-family: $font-family-bold;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  .field--name-field-left-column {
+    font-family: $font-family-light;
+    font-size: 30px;
+    float:left;
+    width: 50%;
+    text-align: center;
+    padding-right: 50px;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .field--name-field-right-column {
+    font-family: $font-family-light;
+    font-size: 30px;
+    float:left;
+    width: 50%;
+    text-align: center;
+    padding-left: 50px;
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Video paragraph 
+.paragraph--type--video  {
+  position: relative;
+  background-color: aquamarine;
+  clear:left;
+  padding: 195px 0 180px;
+  .video-embed-field-responsive-video {
+    max-height: 675px;
+    overflow: hidden;
+    margin: 0;
+  }
+  iframe {
+    width: 80%;
+    max-height: 675px;
+    margin: auto;
+  }
+  .field--name-field-caption {
+    position: absolute;
+    left:80px;
+    bottom: 50px;
+    font-family: $font-family-light;
+    font-size: 20px;
+    color:#FFF;
+  }
+}
+
+// Image paragraph 
+.paragraph--type--image {
+  position: relative;
+  .field--name-field-image {
+    img {
+      width: 100%;
+    }
+  }
+  .field--name-field-caption {
+    position: absolute;
+    left:80px;
+    bottom: 50px;
+    font-family: $font-family-light;
+    font-size: 20px;
+    color:#FFF;
+  }
+}

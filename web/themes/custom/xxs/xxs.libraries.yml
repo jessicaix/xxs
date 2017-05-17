@@ -2,8 +2,6 @@ global-styling:
   css:
     theme:
       stylesheets/style.css: {}
-  js:
-    js/xxs.js: {}
 
 bootstrap-scripts:
   js:
@@ -19,3 +17,16 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
+
+fullpage:
+  css:
+    theme:
+      stylesheets/jquery.fullPage.css: {}
+  js:
+    js/jquery.fullPage.min.js: {}
+    js/fullpage.js: {}
+
+main:
+  js:
+    js/infieldlabel.js: {}
+    js/xxs.js: {}
