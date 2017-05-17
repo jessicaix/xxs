@@ -1,0 +1,74 @@
+// WORK OVERVIEW
+.path-node-50 {
+  .paragraph--type--campaign {
+    margin:0 15px;
+  }
+  .footer {
+    margin-top:-1.5px;
+  }
+}
+#block-views-block-work-block-1 {
+  .views-row {
+    float:left;
+    width: 33.33333%;
+    padding: 1.5px 0;
+    cursor: default;
+    &:hover {
+      .campaign-content {
+        display: block;
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(5),
+    &:nth-child(8),
+    &:nth-child(11),
+    &:nth-child(14),
+    &:nth-child(17),
+    &:nth-child(20),
+    &:nth-child(23),
+    &:nth-child(26),
+    &:nth-child(29) {
+      padding: 1.5px 3px;
+    }
+    h3 {
+      font-size: 15px;
+      margin: 0 auto 35px;
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  .paragraph--type--campaign {
+    font-size: 32px;
+    margin: 0;
+    min-height: 270px;
+    .campaign-content {
+      display: none;
+      width: 80%;
+    }
+    .field--name-field-subtitle {
+      margin-top: 5px;
+    }
+    .field--name-field-button {
+      margin-top:40px;
+      a {
+        font-size: 17px;
+        padding: 9px 13px;
+      }  
+    }
+  }
+}
+
+// WORK DETAILPAGE
+.page-node-type-project {
+  .paragraph--type--campaign {
+    margin: 0 15px;
+    .field--name-field-button {
+      display: none;
+    }
+  }
+}
