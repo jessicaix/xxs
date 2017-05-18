@@ -28,6 +28,7 @@ fullpage:
 
 main:
   js:
+    js/preloader.js: {}
     js/infieldlabel.js: {}
     js/xxs.js: {}
 
