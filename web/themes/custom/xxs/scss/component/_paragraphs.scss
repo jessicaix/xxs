@@ -21,9 +21,14 @@
   height: 793px;
   overflow: hidden;
   background-size: cover;
+  transition:opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),visibility 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transform: transform 1s cubic-bezier(1, 0, 0, 1);
   video {
     width: 100% !important;
     height: 100% !important;
+  }
+  img {
+    width: 100%;
   }
   .header-content {
     display: inline-table;
@@ -50,6 +55,29 @@
       margin-top:100px;
       a {
         color: #fff;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+  .field--name-field-scroll-down {
+    display: block !important;
+    opacity: 1;
+    a {
+      position: absolute;
+      bottom: 15px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 98px;
+      height: 48px;
+      background:url(../images/arrow_down.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
+      transition:all 0.5s ease-in-out;
+      &:hover {
+        transform: translateY(30%);
       }
     }
   }
@@ -79,6 +107,50 @@
   .button {
     margin-top:145px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 25px;
+    padding: 16px 75px;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      -webkit-transition: 2s ease-in;
+      transition:2s ease-in;
+      &:before {
+        transition:1.5s;
+        left:100%;
+      }
+      &:after {
+        transition:1.5s;
+        right:100%;
+      }
+    }
+    &:before {
+      content:"";
+      position: absolute;
+      left: 0;
+      top:0;
+      bottom: 0;
+      margin: auto;
+      width: 33px;
+      height: 63px;
+      background:url(../images/arrow_left_big.png) no-repeat left center;
+      transition:1.5s;
+    }
+    &:after {
+      content:"";
+      position: absolute;
+      right: 0;
+      top:0;
+      bottom: 0;
+      margin: auto;
+      width: 33px;
+      height: 63px;
+      background:url(../images/arrow_right_big.png) no-repeat right center;
+      transition:1.5s;
+    }
   }
 }
 
@@ -113,6 +185,7 @@
       margin:0 auto 45px;
     }
     a {
+      float: left; 
       color: #FFF;
       font-size: 25px;
     }
@@ -127,7 +200,21 @@
     margin-top: 15px;
   }
   .field--name-field-button {
-    margin-top: 45px;
+    margin-top: 80px;
+  }
+  .field--name-field-scroll-down {
+    a {
+      position: absolute;
+      bottom: 50px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_small.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
+    }
   }
 }
 

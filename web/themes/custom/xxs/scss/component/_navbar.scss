@@ -6,8 +6,7 @@ $color_3: #f0f0f0;
   position: absolute;
   top:0;
   left:0;
-  z-index: 99;
-  width: 100%;
+  z-index: 999;
   background-color: transparent;
   border-color: transparent;
   .logo {
@@ -20,6 +19,9 @@ $color_3: #f0f0f0;
 .user-logged-in {
   .nav-tabs {
     position: relative;
+    z-index: 99;
+  }
+  .navbar {
     z-index: 99;
   }
 }
@@ -38,16 +40,28 @@ $color_3: #f0f0f0;
   height: 80%;
   top: 0;
   left: 0;
-  background: rgba(153,204,51,0.9);
+  z-index: 999;
+  background: transparent url(../images/header_bg.png) no-repeat center center !important;
+  background-size: cover !important;
+  &:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom:-100%;
+    content:"";
+    background:rgba(51,51,51,0.76);
+  }
   .overlay-close {
     width: 80px;
     height: 80px;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 95px;
+    top: 60px;
     overflow: hidden;
     border: none;
-    background: url(../img/cross.png) no-repeat center center;
+    background: url(../images/close.png) no-repeat center center;
+    width: 19px;
+    height: 19px;
     text-indent: 200%;
     color: $color_1;
     outline: none;
@@ -57,7 +71,7 @@ $color_3: #f0f0f0;
     text-align: center;
     position: relative;
     top: 50%;
-    height: 60%;
+    height: 100%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
@@ -67,26 +81,45 @@ $color_3: #f0f0f0;
     margin: 0 auto;
     display: inline-block;
     height: 100%;
+    width: 100%;
     position: relative;
     li {
+      float:left;
+      width: 100%;
       display: block;
       height: 20%;
       height: calc(100% / 5);
       min-height: 54px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      &:nth-child(4),
+      &:nth-child(5) {
+       a {
+          font-family: $font-family-semibold;
+          font-size: 30px;
+       }
+      }
+      &:nth-child(4) {
+        margin-top:45px;
+      }
       a {
-        font-size: 54px;
-        font-weight: 300;
-        display: block;
+        font-family: $font-family-bold;
+        font-size: 90px;
+        display: inline-block;
         color: $color_2;
+        line-height: 1;
+        padding: 5px 15px;
         -webkit-transition: color 0.2s;
         transition: color 0.2s;
         &:hover {
           color: $color_3;
+          background-color: transparent;
+          outline: none;
         }
         &:focus {
           color: $color_3;
+          background-color: transparent;
+          outline: none;
         }
       }
     }
@@ -103,7 +136,7 @@ $color_3: #f0f0f0;
     left: 0;
   }
   .overlay-path {
-    fill: rgba(153,204,51,0.9);
+    fill: none;
   }
   nav {
     opacity: 0;
@@ -144,7 +177,7 @@ $color_3: #f0f0f0;
 @media screen and (max-height: 30.5em) {
   .overlay {
     nav {
-      height: 70%;
+      height: 100%;
       font-size: 34px;
     }
     ul {
@@ -155,3 +188,59 @@ $color_3: #f0f0f0;
   }
 }
 
+
+// Menu toggle
+#trigger-overlay {
+  position: absolute;
+  top:60px;
+  right:95px;
+  z-index: 999;
+  background:transparent url(../images/menu_toggle.png) no-repeat center center;
+  width: 24px;
+  height: 10px;
+  border:none;
+  float:left;
+  text-indent: -9999px;
+}
+
+// Menu footer
+#block-menufooter {
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom:40px;
+  float:left;
+  width: 100%;
+  color: $gray-dark;
+  .social-media {
+    float:left;
+    width: 50%;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 95px;
+    a {
+      color: $gray-dark;
+      text-decoration: none;
+      &:hover {
+        color:#fff;
+      }
+    }
+  }
+  .copyright {
+    float:left;
+    width: 50%;
+    font-size: 15px;
+    text-align: right;
+    padding-right: 95px;
+  }
+}
+
+
+// Logo
+.overlay {
+  .logo {
+    display: block;
+    margin:45px 0 0 80px;
+  }
+}

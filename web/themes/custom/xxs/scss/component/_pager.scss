@@ -1,0 +1,64 @@
+// PAGER
+#block-views-block-pager-likes-block-1,
+#block-views-block-pager-likes-block-2 {
+  background-color: $gray-light;
+  .form-group {
+    margin:0;
+  }
+  a {
+    display: block !important;
+    opacity: 1;
+    font-family: $font-family-light;
+    font-size: 29px;
+    line-height: 63px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .entity-pager-list {
+    float:left;
+    width: 100%;
+    background:url(../images/slash.png) no-repeat center center;
+    margin: 30px 0;
+    padding: 70px 0;
+  }
+  .entity-pager-item-prev {
+    position: relative;
+    float:left;
+    a {
+      padding-left: 250px;
+      &:hover {
+        transform:translateX(-15%);
+      }
+      &:before {
+        position: absolute;
+        left: 0;
+        content:"";
+        background:url(../images/arrow_left_big.png) no-repeat left center;
+        width: 33px;
+        height: 63px;
+      }  
+    }
+  }
+  .entity-pager-item-next {
+    position: relative;
+    float:right;
+    a {
+      padding-right: 250px;
+      &:hover {
+        transform:translateX(15%);
+      }
+      &:before {
+        position: absolute;
+        right: 0;
+        content:"";
+        background:url(../images/arrow_right_big.png) no-repeat right center;
+        width: 32px;
+        height: 63px;
+      }  
+    }
+  }
+  .inactive {
+    display: none;
+  }
+}

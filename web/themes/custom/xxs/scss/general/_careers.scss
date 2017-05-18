@@ -1,4 +1,8 @@
+// Careers overview
 .path-node-52 {
+  #trigger-overlay {
+    background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
+  }
   .field--name-field-text {
     font-family: $font-family-medium;
     font-size: 26px;
@@ -6,6 +10,33 @@
       font-family: $font-family-bold;
       font-size: 48px;
       text-transform: none;
+    }
+  }
+  .paragraph--type--text {
+    position: relative;
+    background: url(../images/bureaublad_rj-3.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  .field--name-field-scroll-down {
+    display: block !important;
+    opacity: 1;
+    a {
+      position: absolute;
+      bottom: 50px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_black.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
+      &:hover {
+        transform: translateY(30%);
+      }  
+      &.contact {
+        display: none;
+      }
     }
   }
 }
@@ -40,10 +71,15 @@
     bottom: 50px;
     margin: 0;
     a {
+      display: inline-block !important;
+      opacity: 1;
       background:url(../images/arrow_right.png) no-repeat right center;
-      font-weight: $font-family-semibold;
+      font-family: $font-family-semibold;
       font-size: 24px;
       padding:3px 30px 3px 0;
+      &:hover {
+        transform:translateX(15%);
+      }
     }
   }
 }

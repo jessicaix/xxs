@@ -8,6 +8,21 @@
   }
 }
 #block-views-block-work-block-1 {
+  .form-group {
+    float:left;
+    width: 100%;
+    margin: 0;
+  }
+  .view-filters {
+    text-align: right;
+    padding-right: 95px;
+    margin-bottom: 45px;
+    .select-wrapper,
+    select {
+      cursor: pointer;
+      min-height: 37px;
+    }
+  }
   .views-row {
     float:left;
     width: 33.33333%;
@@ -57,9 +72,12 @@
       margin-top:40px;
       a {
         font-size: 17px;
-        padding: 9px 13px;
+        padding: 10px 30px;
       }  
     }
+  }
+  .field--name-field-scroll-down {
+    display: none;
   }
 }
 

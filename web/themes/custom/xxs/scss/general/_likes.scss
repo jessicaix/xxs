@@ -2,11 +2,15 @@
 .path-likes {
   background: url(../images/lines_bg.png) repeat-y center center;
   background-size: cover;
+  #trigger-overlay {
+    background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
+  }
 }
 
 .view-likes {
   .views-row {
-    min-height: 525px;
+    position: relative;
+    min-height: 485px;
     background-color: $gray-light;
     float:left;
     width: 30%;
@@ -39,17 +43,21 @@
       font-size: 23px;
     }
     .views-field-view-node {
-      float:left;
-      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       padding:50px 30px 30px;
       a {
-        opacity: 0;
+        display: inline-block !important;
         -webkit-transition: .5s ease-in-out;
         transition:.5s ease-in-out;
         background:url(../images/arrow_right.png) no-repeat right center;
         font-family: $font-family-semibold;
         font-size: 20px;
         padding:3px 30px 3px 0;
+        &:hover {
+          transform:translateX(15%);
+        }
       }
     }
   }
@@ -76,6 +84,11 @@
       .field--name-field-title {
         font-size: 25px;
         text-transform: none;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp:3;
+        -webkit-box-orient: vertical;
+        line-height: 1;
       }
       .field--name-field-subtitle {
         font-size: 25px;
@@ -108,6 +121,28 @@
       }
     }
   }
+  .pager {
+    margin:125px 0 55px;
+    .pager__item {
+      display: block !important;
+      opacity: 1;
+    }
+    .button {
+      text-indent: -9999px;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_black.png) no-repeat center center;
+      border:none;
+      transition:all 0.5s ease-in-out;
+      &:hover {
+        transform: translateY(80%);
+      }
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 
 // LIKES DETAILPAGE
@@ -136,5 +171,38 @@
   .paragraph--type--text {
     font-family: $font-family-light;
     text-align: left;
+  }
+}
+
+// LIKES HOMEPAGE
+#block-views-block-likes-block-1 {
+  background: url(../images/lines_bg.png) repeat-y center center;
+  background-size: cover;
+  padding: 190px 15px 115px;
+  .block-title {
+    font-family: $font-family-bold;
+    font-size: 100px;
+    color:$black;
+    text-align: center;
+    margin:0 0 100px;
+  }
+  .views-row {
+    min-height: 480px;
+  }
+  .view-footer {
+    text-align: center;
+    a {
+      margin-top:125px;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+      &:before {
+        background:url(../images/arrow_left_big.png) no-repeat left center;
+      }
+      &:after {
+        background:url(../images/arrow_right_big.png) no-repeat right center;
+      }
+    }
   }
 }
