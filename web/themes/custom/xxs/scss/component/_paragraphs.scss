@@ -299,3 +299,50 @@
     color:#FFF;
   }
 }
+
+// Project results paragraph
+.paragraph--type-project-results {
+  background-color: #e6e8f4;
+  margin: auto;
+  padding: 160px 0 205px;
+  .group-header {
+    text-align: center;
+    margin-bottom: 150px;
+    h3 {
+      font-family: $font-family-medium;
+      font-size: 40px;
+      margin: 0 0 10px;
+      text-transform: none;
+    }
+    .field--name-field-title {
+      font-family: $font-family-bold;
+      font-size: 40px;
+    }
+  }
+  .group-left {
+    width:40%;
+    .field--label {
+      font-family: $font-family-light;
+      font-size: 30px;
+      &:after {
+        content:":";
+      }
+    }
+    .field--item {
+      font-family: $font-family-bold;
+      font-size: 35px;
+    }
+    .field {
+      margin-bottom: 50px;
+    }
+  }
+  .group-right {
+    width: 60%;
+    font-family: $font-family-light;
+    font-size: 30px;
+    text-align: center;
+    .intro {
+      font-size: 30px;
+    }
+  }
+}
