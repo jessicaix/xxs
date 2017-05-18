@@ -1,3 +1,4 @@
+// Careers overview
 .path-node-52 {
   .field--name-field-text {
     font-family: $font-family-medium;
@@ -6,6 +7,26 @@
       font-family: $font-family-bold;
       font-size: 48px;
       text-transform: none;
+    }
+  }
+  .paragraph--type--text {
+    position: relative;
+  }
+  .field--name-field-scroll-down {
+    a {
+      position: absolute;
+      bottom: 50px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_black.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
+      &.contact {
+        display: none;
+      }
     }
   }
 }

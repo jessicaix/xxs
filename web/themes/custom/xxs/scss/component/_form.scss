@@ -88,28 +88,25 @@ input {
     &::-ms-expand {
       opacity: 0;
     }
+    &.form-control {
+      background-color: transparent;
+      color: #000;
+      border:none;
+      box-shadow: none;
+    }
   }
   &:after {
-    color: $brand-primary;
-    content: '▼';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    margin-top: -.5em;
-    padding-right: .5em;
-    pointer-events: none;
+    background: url(../images/arrow_down_small_black.png) no-repeat right center;
+    content: "";
     position: absolute;
     right: 0;
-    top: 50%;
-    z-index: 10;
+    top: 12px;
+    z-index: -99;
+    width: 20px;
+    height:11px;
 
     // Use a more stylish icon if the theme uses glyphicons.
     .has-glyphicons & {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: '\e114'; // .glyphicon-chevron-down
-      display: inline-block;
-      font-family: 'Glyphicons Halflings';
     }
     .has-error & {
       color: $state-danger-text;

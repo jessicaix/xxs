@@ -25,6 +25,9 @@
     width: 100% !important;
     height: 100% !important;
   }
+  img {
+    width: 100%;
+  }
   .header-content {
     display: inline-table;
     position: absolute;
@@ -51,6 +54,20 @@
       a {
         color: #fff;
       }
+    }
+  }
+  .field--name-field-scroll-down {
+    a {
+      position: absolute;
+      bottom: 15px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 98px;
+      height: 48px;
+      background:url(../images/arrow_down.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
     }
   }
 }
@@ -128,6 +145,20 @@
   }
   .field--name-field-button {
     margin-top: 45px;
+  }
+  .field--name-field-scroll-down {
+    a {
+      position: absolute;
+      bottom: 50px;
+      left:0;
+      right: 0;
+      margin: auto;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_small.png) no-repeat center center;
+      float:left;
+      text-indent: -9999px;
+    }
   }
 }
 

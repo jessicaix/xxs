@@ -108,6 +108,16 @@
       }
     }
   }
+  .pager {
+    margin:125px 0 55px;
+    .button {
+      text-indent: -9999px;
+      width: 61px;
+      height: 31px;
+      background:url(../images/arrow_down_black.png) no-repeat center center;
+      border:none;
+    }
+  }
 }
 
 // LIKES DETAILPAGE
