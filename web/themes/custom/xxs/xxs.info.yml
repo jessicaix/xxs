@@ -7,6 +7,7 @@ description: 'Custom template for XXS Amsterdam'
 package: 'Bootstrap'
 
 regions:
+  overlay: 'Overlay'
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   header: 'Top Bar'
@@ -22,4 +23,5 @@ regions:
 libraries:
   - 'xxs/global-styling'
   - 'xxs/bootstrap-scripts'
+  - 'xxs/menu'
   - 'xxs/main'

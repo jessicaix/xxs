@@ -101,7 +101,6 @@
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-
       {# Header #}
       {% if page.header %}
         {% block header %}
@@ -130,7 +129,6 @@
         ]
       %}
       <section{{ content_attributes.addClass(content_classes) }}>
-
         {# Highlighted #}
         {% if page.highlighted %}
           {% block highlighted %}
@@ -183,5 +181,19 @@
     <footer class="footer {{ container }}" role="contentinfo">
       {{ page.footer }}
     </footer>
+  {% endblock %}
+{% endif %}
+<button id="trigger-overlay" type="button">Open Overlay</button>
+{% if page.overlay %}
+  {% block overlay %}
+    <div class="overlay overlay-cornershape" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 806" preserveAspectRatio="none">
+        <path class="overlay-path" d="m 0,0 1439.999975,0 0,805.99999 0,-805.99999 z"/>
+      </svg>
+      <button type="button" class="overlay-close">Close</button>
+      <nav>
+        {{ page.overlay }}
+      </nav>
+    </div>
   {% endblock %}
 {% endif %}
