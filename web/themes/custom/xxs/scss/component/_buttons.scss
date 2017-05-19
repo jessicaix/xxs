@@ -123,3 +123,23 @@
     opacity: 1;
   }
 }
+
+// Newsletter button
+#block-newslettersignup {
+  .field--name-field-button {
+    margin-top: 10px;
+    &:before {
+      background:url(../images/arrow_left_small_white.png) no-repeat left center;
+    }
+    &:after {
+      background:url(../images/arrow_right_small_white.png) no-repeat right center;
+    }
+    a {
+      color: #fff;
+      padding: 2px 40px;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

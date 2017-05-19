@@ -2,6 +2,10 @@
   .field--item {
     &:first-child {
       .paragraph--type--header {
+        background:url(../images/header_bg.png) no-repeat center center;
+        height: 793px;
+        overflow: hidden;
+        background-size: cover;
         .header-content {
           &:before {
             content:"We are";

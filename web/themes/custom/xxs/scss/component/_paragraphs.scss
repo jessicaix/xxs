@@ -16,11 +16,9 @@
 // Header paragraph
 .paragraph--type--header {
   position: relative;
-  background:url(../images/header_bg.png) no-repeat center center;
   color:#FFF;
-  height: 793px;
-  overflow: hidden;
-  background-size: cover;
+  transition:opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),visibility 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transform: transform 1s cubic-bezier(1, 0, 0, 1);
   video {
     width: 100% !important;
     height: 100% !important;
@@ -43,20 +41,14 @@
       font-family: $font-family-extrabold;
       font-size: 110px;
       text-transform: uppercase;
-      transition: opacity 1.5s cubic-bezier(0.19, 1, 0.22, 1), transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-      transition-delay: 0.05s;
     }
     .field--name-field-subtitle {
       font-family: $font-family-semibold;
       font-size: 30px;
       margin-top:60px;
-      transition: opacity 1.5s cubic-bezier(0.19, 1, 0.22, 1), transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-      transition-delay: 0.15s;
     }
     .field--name-field-button {
       margin-top:100px;
-      transition: opacity 1.5s cubic-bezier(0.19, 1, 0.22, 1), transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-      transition-delay: 0.25s;
       a {
         color: #fff;
         &:hover {
@@ -70,7 +62,7 @@
     opacity: 1;
     a {
       position: absolute;
-      bottom: 15px;
+      bottom: 50px;
       left:0;
       right: 0;
       margin: auto;
@@ -92,7 +84,9 @@
   font-family: $font-family-semibold;
   font-size: 30px;
   text-align: center;
-  padding: 200px 0 140px;
+  padding: 100px 0;
+  transition:opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),visibility 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transform: transform 1s cubic-bezier(1, 0, 0, 1);
   .small {
     font-size: 20px;
     text-transform: uppercase;
@@ -161,12 +155,11 @@
 // Campaign paragraph 
 .paragraph--type--campaign {
   position: relative;
-  background:url(../images/header_bg.png) no-repeat center center;
   color:#FFF;
-  min-height: 793px;
-  background-size: cover;
   font-size: 80px;
   margin: 0;
+  transition:opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),visibility 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transform: transform 1s cubic-bezier(1, 0, 0, 1);
   video {
     width: 100% !important;
     height: 100% !important;
@@ -207,6 +200,8 @@
     margin-top: 80px;
   }
   .field--name-field-scroll-down {
+    display: block !important;
+    opacity: 1;
     a {
       position: absolute;
       bottom: 50px;
@@ -218,6 +213,9 @@
       background:url(../images/arrow_down_small.png) no-repeat center center;
       float:left;
       text-indent: -9999px;
+      &:hover {
+        transform: translateY(30%);
+      }
     }
   }
 }
