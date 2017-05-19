@@ -4,7 +4,7 @@
     .header-content,
     .campaign-content,
     .field--name-field-text {
-        animation: 2s slide-up;
+        animation: 5s slide-up;
         margin-top:auto;
     }
   }
@@ -13,7 +13,7 @@
 @keyframes slide-up {
   from {
     margin-top:50%;
-    height: 300%;
+    height: -300%;
   }
   
   to {

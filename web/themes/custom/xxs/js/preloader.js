@@ -8,12 +8,19 @@
   'use strict';
 
   $(window).on('load', function() { // makes sure the whole site is loaded
-    //$('#preloader').addClass('loaded');
-    $('.preloader').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+    $('#preloader').addClass('loaded');
+    setTimeout(function(){
+      $( "#wrapper" ).fadeIn( "slow", function() {
+      });
+    }, 1300);
+
+    $('#preloader').one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
       function(e) {
-        $( ".preloader" ).fadeOut( "fast", function() {
-          $('.preloader').css("display", "none");
+        $( "#preloader" ).fadeOut( "slow", function() {
+          $('#preloader').css("display", "none");
         });
+      // code to execute after transition ends
+
     });
   })
 
