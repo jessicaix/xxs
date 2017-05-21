@@ -1,0 +1,30 @@
+.path-frontpage {
+  .field--item:first-child {
+    .paragraph--type--header {
+      background: none !important;
+      max-height: inherit !important;
+      height: inherit !important;
+      .header-content {
+        display: block !important;
+        height: 50% !important;
+      }
+      .field--name-field-title {
+        font-family: $font-family-semibold !important;
+        font-size: 50px !important;
+      }
+      .field--name-field-subtitle {
+        font-family: $font-family-extrabold !important;
+        font-size: 80px !important;
+        margin-top:30px !important;
+      }
+      .field--name-field-subtitle2 {
+        margin-top:30px;
+        font-style: italic;
+      }
+    }
+  }
+  .paragraph--type--text {
+    font-family: $font-family-semibold !important;
+    text-align: center !important;
+  }
+}

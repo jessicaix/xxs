@@ -18,16 +18,14 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
 
-fullpage:
+main:
   css:
     theme:
       stylesheets/jquery.fullPage.css: {}
   js:
-    js/jquery.fullPage.min.js: {}
-    js/fullpage.js: {}
-
-main:
-  js:
+    js/scrolloverflow.min.js: {}
+    js/jquery.easings.min.js: {}
+    js/jquery.fullPage.js: {}
     js/preloader.js: {}
     js/infieldlabel.js: {}
     js/xxs.js: {}

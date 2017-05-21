@@ -3,6 +3,10 @@
   .paragraph--type--campaign {
     margin:0 15px;
   }
+  .paragraph--type--text {
+    font-family: $font-family-semibold;
+    text-align: center;
+  }
   .footer {
     margin-top:-1.5px;
   }
@@ -89,6 +93,29 @@
     margin: 0 15px;
     .field--name-field-button {
       display: none;
+    }
+  }
+  .paragraph--type--text {
+    font-family: $font-family-light;
+    text-align: left;
+    h1,
+    h2,
+    h3,
+    h4 {
+      max-width: 940px;
+      margin:35px auto 50px;
+    }
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    h3 {
+      font-size: 35px;
+    }
+    h4 {
+      font-size: 26px;
     }
   }
 }

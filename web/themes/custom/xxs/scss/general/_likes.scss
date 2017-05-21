@@ -1,5 +1,5 @@
 // LIKES OVERVIEW
-.path-likes {
+.path-like {
   background: url(../images/lines_bg.png) repeat-y center center;
   background-size: cover;
   #trigger-overlay {
@@ -71,8 +71,14 @@
   .paragraph--type--header {
     background: transparent;
     height: auto;
+    width: 100% !important;
     margin: 0;
     overflow: inherit;
+    .header-bg {
+      &:after {
+        display: none;
+      }
+    }
     .header-content {
       position: relative;
       float:left;
@@ -97,11 +103,12 @@
     }
     .field--name-field-image {
       overflow: hidden;
+      max-height: 192px;
       &:before {
         content: "";
         position: absolute;
         right: 0;
-        top:0;
+        top:-1px;
         z-index: 1;
         border-top:45px solid #fff;
         border-left: 45px solid transparent;
@@ -171,6 +178,25 @@
   .paragraph--type--text {
     font-family: $font-family-light;
     text-align: left;
+      h1,
+      h2,
+      h3,
+      h4 {
+      max-width: 940px;
+      margin:35px auto 50px;
+    }
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    h3 {
+      font-size: 35px;
+    }
+    h4 {
+      font-size: 26px;
+    }
   }
 }
 

@@ -3,7 +3,7 @@ $color_2: #fff;
 $color_3: #f0f0f0;
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
   z-index: 999;
@@ -37,7 +37,7 @@ $color_3: #f0f0f0;
 .overlay {
   position: fixed;
   width: 100%;
-  height: 80%;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 999;
@@ -93,42 +93,6 @@ $color_3: #f0f0f0;
       min-height: 54px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      &:before {
-        opacity: 0;
-        content:"";
-        position: absolute;
-        left: 0;
-        top:0;
-        bottom: 0;
-        margin: auto;
-        width: 17px;
-        height: 31px;
-        background:url(../images/arrow_left_small_white.png) no-repeat left center;
-        transition:1.5s;
-      }
-      &:after {
-        opacity: 0;
-        content:"";
-        position: absolute;
-        right: 0;
-        top:0;
-        bottom: 0;
-        margin: auto;
-        width: 17px;
-        height: 31px;
-        background:url(../images/arrow_right_small_white.png) no-repeat right center;
-        transition:1.5s;
-      }
-      &:hover {
-        &:before {
-          transition:1.5s;
-          left:100%;
-        }
-        &:after {
-          transition:1.5s;
-          right:100%;
-        }
-      }
       &:nth-child(4),
       &:nth-child(5) {
        a {
@@ -145,71 +109,48 @@ $color_3: #f0f0f0;
         position: relative;
         font-family: $font-family-bold;
         font-size: 90px;
-        display: inline-block;
         color: $color_2;
         line-height: 1;
-        padding: 5px 85px;
-        -webkit-transition: color 0.2s;
-        transition: color 0.2s;
+        padding: 5px 55px;
+        margin:0 31px;
         &:hover,
         &:focus {
           background-color: #fff;
           color: #000;
           text-decoration: none;
-          -webkit-transition: 1.5s ease-in;
-          transition:1.5s ease-in;
-          &:before {
-            opacity: 1;
-            transition:1.5s;
-            left:100%;
-          }
           &:after {
-            opacity: 1;
-            transition:1.5s;
-            right:100%;
+            border-top: 30px solid transparent;
+            border-left: 30px solid #fff;
+            border-bottom: 30px solid transparent;
           }
-        }
-        &:before {
-          opacity: 0;
-          content:"";
-          position: absolute;
-          left: 0;
-          top:0;
-          bottom: 0;
-          margin: auto;
-          width: 17px;
-          height: 31px;
-          background:url(../images/arrow_left_small_white.png) no-repeat left center;
-          transition:1.5s;
-        }
-        &:after {
-          opacity: 0;
-          content:"";
-          position: absolute;
-          right: 0;
-          top:0;
-          bottom: 0;
-          margin: auto;
-          width: 17px;
-          height: 31px;
-          background:url(../images/arrow_right_small_white.png) no-repeat right center;
-          transition:1.5s;
-        }
-        &.is-active {
-          display: inline-block;
-          overflow: hidden;
-          position: relative;
+          &:before {
+            border-top: 30px solid transparent;
+            border-right: 30px solid #fff;
+            border-bottom: 30px solid transparent;
+          }
+        } 
+      }  
+      &.active {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        a {
           &:hover,
           &:focus {
-            &:before {
-              transition:1.5s;
-              left:100%;
-            }
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
             &:after {
-              transition:1.5s;
-              right:100%;
+              border-top: 30px solid transparent;
+              border-left: 30px solid #fff;
+              border-bottom: 30px solid transparent;
             }
-          }
+            &:before {
+              border-top: 30px solid transparent;
+              border-right: 30px solid #fff;
+              border-bottom: 30px solid transparent;
+            }
+          }  
           &:before {
             opacity: 1;
             content:"";
@@ -221,7 +162,6 @@ $color_3: #f0f0f0;
             width: 17px;
             height: 31px;
             background:url(../images/arrow_left_small_white.png) no-repeat left center;
-            transition:1.5s;
           }
           &:after {
             opacity: 1;
@@ -234,7 +174,6 @@ $color_3: #f0f0f0;
             width: 17px;
             height: 31px;
             background:url(../images/arrow_right_small_white.png) no-repeat right center;
-            transition:1.5s;
           }
         }
       }
@@ -336,10 +275,35 @@ $color_3: #f0f0f0;
     text-align: left;
     padding-left: 95px;
     a {
-      color: $gray-dark;
+      float:left;
+      text-indent: -9999px;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
       text-decoration: none;
-      &:hover {
-        color:#fff;
+      &.facebook {
+        background:url(../images/facebook.png) no-repeat center center;
+        &:hover {
+          background:url(../images/facebook_hover.png) no-repeat center center;
+        }
+      }
+      &.linkedin {
+        background:url(../images/linkedin.png) no-repeat center center;
+        &:hover {
+          background:url(../images/linkedin_hover.png) no-repeat center center;
+        }
+      }
+      &.instagram {
+        background:url(../images/instagram.png) no-repeat center center;
+        &:hover {
+          background:url(../images/instagram_hover.png) no-repeat center center;
+        }
+      }
+      &.twitter {
+        background:url(../images/twitter.png) no-repeat center center;
+        &:hover {
+          background:url(../images/twitter_hover.png) no-repeat center center;
+        }
       }
     }
   }

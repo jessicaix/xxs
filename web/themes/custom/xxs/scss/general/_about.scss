@@ -4,17 +4,21 @@
       .paragraph--type--header {
         background:url(../images/header_bg.png) no-repeat center center;
         height: 793px;
+        max-height: inherit;
         overflow: hidden;
         background-size: cover;
-        .header-content {
-          &:before {
-            content:"We are";
-            font-size: 20px;
-            text-transform: uppercase;
-          }
-        }
         .field--name-field-title {
-          margin-top:50px;
+          font-family: $font-family-semibold !important;
+          font-size: 50px !important;
+        }
+        .field--name-field-subtitle {
+          font-family: $font-family-extrabold !important;
+          font-size: 80px !important;
+          margin-top:30px !important;
+        }
+        .field--name-field-subtitle2 {
+          margin-top:30px;
+          font-style: italic;
         }
       }
     }
@@ -22,7 +26,7 @@
       .paragraph--type--text {
         background: $gray-light url(../images/xxs_bg.png) no-repeat top 120px center;
         padding:120px 0;
-        margin: 0;
+        margin: 0 auto;
         min-height: 3092px;
       }
     }
@@ -35,6 +39,8 @@
     }
   }
   .paragraph--type--text {
+    font-family: $font-family-semibold;
+    text-align: center;
     .about-block {
       font-family: $font-family-light;
       float: left;

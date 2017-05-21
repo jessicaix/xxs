@@ -3,9 +3,17 @@
   #trigger-overlay {
     background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
   }
+  .field--item {
+    &:first-child {
+      .paragraph--type--text {
+        padding-top:100px;
+      }
+    }
+  }    
   .field--name-field-text {
     font-family: $font-family-medium;
     font-size: 26px;
+    text-align: center;
     h2 {
       font-family: $font-family-bold;
       font-size: 48px;
@@ -82,4 +90,70 @@
       }
     }
   }
+}
+
+// Careers detailpage
+.page-node-type-job {
+  #trigger-overlay {
+    background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
+  }
+  .field--item {
+    &:first-child {
+      .paragraph--type--text {
+        position: relative;
+        background: url(../images/bureaublad_rj-3.jpg) no-repeat center center;
+        background-size: cover;
+        min-height: 430px;
+        padding: 100px 0;
+        text-align: center;
+        .field--name-field-text {
+          position: absolute;
+          top:0;
+          bottom: 0;
+          left:0;
+          right: 0;
+          margin: auto;
+          width: 60%;
+          display: inline-table;
+          font-family: $font-family-medium;
+          font-size: 26px;
+          h2 {
+            font-family: $font-family-bold;
+            font-size: 48px;
+            text-transform: none;
+            margin:0 auto;
+          }
+          .small {
+            margin:0 auto;
+          }
+        }  
+      }
+    }
+  }
+  .paragraph--type--text {
+    font-family: $font-family-light;
+    text-align: left;
+    h1,
+    h2,
+    h3,
+    h4 {
+      max-width: 940px;
+      margin:35px auto 50px;
+    }
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    h3 {
+      font-size: 35px;
+    }
+    h4 {
+      font-size: 26px;
+    }
+  }
+  #block-views-block-jobs-block-1 .views-row, #block-views-block-jobs-block-1 .view-header {
+    background-color:$gray-light;
+  } 
 }

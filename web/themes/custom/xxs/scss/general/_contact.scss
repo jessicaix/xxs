@@ -37,7 +37,36 @@
       font-size: 15px;
       text-transform: uppercase;
       a {
+        float:left;
+        text-indent: -9999px;
+        width: 24px;
+        height: 24px;
         text-decoration: none;
+        margin-right: 10px;
+        &.facebook {
+          background:url(../images/facebook.png) no-repeat center center;
+          &:hover {
+            background: url(../images/facebook_hover.png) no-repeat center center;
+          }
+        }
+        &.linkedin {
+          background:url(../images/linkedin.png) no-repeat center center;
+          &:hover {
+            background:url(../images/linkedin_hover.png) no-repeat center center;
+          }
+        }
+        &.instagram {
+          background:url(../images/instagram.png) no-repeat center center;
+          &:hover {
+            background:url(../images/instagram_hover.png) no-repeat center center;
+          }
+        }
+        &.twitter {
+          background:url(../images/twitter.png) no-repeat center center;
+          &:hover {
+            background:url(../images/twitter_hover.png) no-repeat center center;
+          }
+        }         
       }
     }
   }

@@ -62,7 +62,7 @@
 <div id="preloader">
   <div id="logo"></div>
 </div>
-<div id="wrapper">
+<div id="fullpage">
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
@@ -88,6 +88,7 @@
             <span class="icon-bar"></span>
           </button>
         {% endif %}
+        <button id="trigger-overlay" type="button">Open Overlay</button>
       </div>
 
       {# Navigation (collapsible) #}
@@ -178,18 +179,16 @@
           </aside>
         {% endblock %}
       {% endif %}
-    </div>
-</div>
-{% endblock %}
-
-{% if page.footer %}
+      {% if page.footer %}
   {% block footer %}
-    <footer class="footer {{ container }}" role="contentinfo">
+    <footer class="footer {{ container }} section" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endblock %}
 {% endif %}
-<button id="trigger-overlay" type="button">Open Overlay</button>
+    </div>
+</div>
+{% endblock %}
 {% if page.overlay %}
   {% block overlay %}
     <div class="overlay overlay-cornershape" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
