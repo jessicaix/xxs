@@ -103,12 +103,18 @@
     }
     .field--name-field-button {
       margin-top:20px;
+      overflow: hidden;
       @media #{$screen-tablet} {
         margin-top:40px;
       }
       a {
-        font-size: 17px;
+        font-size: 16px;
         padding: 10px 30px;
+        margin:0 32px;
+        @media #{$screen-tablet} {
+          font-size: 17px;
+          padding: 10px 30px;
+        }
       }  
     }
   }

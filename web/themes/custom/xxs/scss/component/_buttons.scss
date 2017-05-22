@@ -1,13 +1,21 @@
 .button {
   position: relative;
-  overflow: hidden;
   display: inline-block;
-  font-size: 25px;
-  padding: 16px 42px;
-  margin:0 31px;
+  font-size: 20px;
+  padding: 5px;
+  color:#FFFFFF;
+  background-image: linear-gradient(#FFFFFF, #FFFFFF);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size .5s, color .5s;
+  @media #{$screen-tablet} {
+    font-size: 25px;
+    padding: 17px 42px;
+  }
   &:hover,
   &:focus {
-    background-color: #fff;
+    background-size: 100% 100%;
     color: #000;
     text-decoration: none;
     &:after {
@@ -24,77 +32,87 @@
   &:before {
     content:"";
     position: absolute;
-    left: 0;
+    left: -32px;
     top:0;
     bottom: 0;
     margin: auto;
     width: 33px;
     height: 63px;
     background:url(../images/arrow_left_big_white.png) no-repeat left center;
+    transition-delay: .4s;
   }
   &:after {
     content:"";
     position: absolute;
-    right: 0;
+    right: -31px;
     top:0;
     bottom: 0;
     margin: auto;
     width: 33px;
     height: 63px;
     background:url(../images/arrow_right_big_white.png) no-repeat right center;
+    transition-delay: .4s;
   }
 }
 
 .field--name-field-button {
-  position: relative;
   display: inline-block;
   overflow: hidden;
-  &:hover {
-    a {
-      background-color: #fff;
+  a {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 32px;
+    color:#FFFFFF;
+    background-image: linear-gradient(#FFFFFF, #FFFFFF);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s, color .5s;
+    @media #{$screen-tablet} {
+      font-size: 25px;
+      padding: 17px 42px;
+    }
+    &:hover,
+    &:focus {
+      background-size: 100% 100%;
       color: #000;
       text-decoration: none;
-    }
-    &:after {
-      border-top: 30px solid transparent;
-      border-left: 30px solid #fff;
-      border-bottom: 30px solid transparent;
+      &:after {
+        border-top: 30px solid transparent;
+        border-left: 30px solid #fff;
+        border-bottom: 30px solid transparent;
+      }
+      &:before {
+        border-top: 30px solid transparent;
+        border-right: 30px solid #fff;
+        border-bottom: 30px solid transparent;
+      }
     }
     &:before {
-      border-top: 30px solid transparent;
-      border-right: 30px solid #fff;
-      border-bottom: 30px solid transparent;
+      content:"";
+      position: absolute;
+      left: -32px;
+      top:0;
+      bottom: 0;
+      margin: auto;
+      width: 33px;
+      height: 63px;
+      background:url(../images/arrow_left_big_white.png) no-repeat left center;
+      transition-delay: .4s;
     }
-  }
-  &:before {
-    content:"";
-    position: absolute;
-    left: 0;
-    top:0;
-    bottom: 0;
-    margin: auto;
-    width: 33px;
-    height: 63px;
-    background:url(../images/arrow_left_big_white.png) no-repeat left center;
-  }
-  &:after {
-    content:"";
-    position: absolute;
-    right: 0;
-    top:0;
-    bottom: 0;
-    margin: auto;
-    width: 33px;
-    height: 63px;
-    background:url(../images/arrow_right_big_white.png) no-repeat right center;
-  }
-  a {
-    display: inline-block;
-    z-index: 1;
-    padding: 5px;
-    margin:0 31px;
-    @media #{$screen-tablet} {
-      padding: 16px 42px;
+    &:after {
+      content:"";
+      position: absolute;
+      right: -31px;
+      top:0;
+      bottom: 0;
+      margin: auto;
+      width: 33px;
+      height: 63px;
+      background:url(../images/arrow_right_big_white.png) no-repeat right center;
+      transition-delay: .4s;
     }
   }
 }
@@ -133,17 +151,32 @@
 #block-newslettersignup {
   .field--name-field-button {
     margin-top: 10px;
-    &:before {
-      background:url(../images/arrow_left_small_white.png) no-repeat left center;
-    }
-    &:after {
-      background:url(../images/arrow_right_small_white.png) no-repeat right center;
-    }
     a {
       color: #fff;
-      padding: 2px 40px;
+      padding: 5px;
+      @media #{$screen-tablet} {
+        padding: 17px 42px;
+      }
       &:hover {
         color: #000;
+        &:after {
+          border-top: 30px solid transparent;
+          border-left: 30px solid #fff;
+          border-bottom: 30px solid transparent;
+        }
+        &:before {
+          border-top: 30px solid transparent;
+          border-right: 30px solid #fff;
+          border-bottom: 30px solid transparent;
+        }
+      }
+      &:before {
+        background:url(../images/arrow_left_big_white.png) no-repeat left center;
+        transition-delay: .4s;
+      }
+      &:after {
+        background:url(../images/arrow_right_big_white.png) no-repeat right center;
+        transition-delay: .4s;
       }
     }
   }

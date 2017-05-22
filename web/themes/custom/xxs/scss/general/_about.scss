@@ -78,8 +78,10 @@
       max-width: 655px;
       font-size: 20px;
       text-align: right;
+      padding: 0 15px;
       @media #{$screen-tablet} {
         font-size: 26px;
+        padding: 0;
       }
       &.insights {
         @media #{$screen-tablet} {

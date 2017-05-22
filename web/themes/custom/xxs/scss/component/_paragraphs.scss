@@ -148,21 +148,23 @@
   .button {
     text-decoration: none;
     position: relative;
-    overflow: hidden;
     display: inline-block;
     font-size: 20px;
-    padding: 16px 42px;
-    margin:50px 31px 0;
+    padding: 5px;
+    margin:50px 0 0;
+    color:#000000;
+    background-image: linear-gradient(#000000, #000000);
     @media #{$screen-tablet} {
       font-size: 25px;
-      margin:100px 31px 0;
+      padding: 14px 42px;
+      margin:100px 0 0;
     }
     @media #{$screen-desktop} {
-      margin:145px 31px 0;
+      margin:145px 0 0;
     }
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-size: 100% 100%;
+      color: #FFF;
       text-decoration: none;
       &:after {
         border-top: 30px solid transparent;
@@ -178,24 +180,26 @@
     &:before {
       content:"";
       position: absolute;
-      left: 0;
+      left: -32px;
       top:0;
       bottom: 0;
       margin: auto;
       width: 33px;
       height: 63px;
       background:url(../images/arrow_left_big.png) no-repeat left center;
+      transition-delay: .4s;
     }
     &:after {
       content:"";
       position: absolute;
-      right: 0;
+      right: -31px;
       top:0;
       bottom: 0;
       margin: auto;
       width: 33px;
       height: 63px;
       background:url(../images/arrow_right_big.png) no-repeat right center;
+      transition-delay: .4s;
     }
   }
 }
@@ -234,7 +238,7 @@
     left:0;
     right: 0;
     width: 100%;
-    height: 60%;
+    height: 80%;
     margin: auto;
     text-align: center;
     @media #{$screen-tablet} {
@@ -245,7 +249,7 @@
       font-family: $font-family-base;
       color: #fff;
       font-size: 16px;
-      margin:0 auto 20px;
+      margin:0 auto 15px;
       @media #{$screen-tablet} {
         font-size: 20px;
         margin: 0 auto 45px;
@@ -267,13 +271,13 @@
   }
   .field--name-field-subtitle {
     font-family:$font-family-extrabold;
-    margin-top: 10px;
+    margin-top: 5px;
     @media #{$screen-tablet} {
       margin-top:15px;
     }
   }
   .field--name-field-button {
-    margin-top: 15px;
+    margin-top: 10px;
     @media #{$screen-tablet} {
       margin-top:50px;
     }
