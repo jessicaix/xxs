@@ -91,8 +91,11 @@
   a {
     display: inline-block;
     z-index: 1;
-    padding: 16px 42px;
+    padding: 5px;
     margin:0 31px;
+    @media #{$screen-tablet} {
+      padding: 16px 42px;
+    }
   }
 }
 
@@ -101,7 +104,7 @@
   display: none !important;
   position: fixed;
   bottom:40px;
-  right: 95px;
+  right: 15px;
   z-index: 999;
   background:transparent url(../images/back-to-top.png) no-repeat center center;
   width: 25px;
@@ -111,6 +114,12 @@
   transition-delay: 0.15s;
   -webkit-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
+  @media #{$screen-tablet} {
+    right: 60px;
+  }
+  @media #{$screen-desktop} {
+    right: 95px;
+  }
   &:hover {
     transform: translateY(-40%);
   }

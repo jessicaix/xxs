@@ -19,13 +19,7 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
 
 main:
-  css:
-    theme:
-      stylesheets/jquery.fullPage.css: {}
   js:
-    js/scrolloverflow.min.js: {}
-    js/jquery.easings.min.js: {}
-    js/jquery.fullPage.js: {}
     js/preloader.js: {}
     js/infieldlabel.js: {}
     js/xxs.js: {}

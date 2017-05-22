@@ -9,6 +9,8 @@
     font-family: $font-family-light;
     font-size: 20px;
     text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
     p {
       &:last-child {
         margin-bottom: 220px;
@@ -16,12 +18,24 @@
     }
     h1 {
       font-family: $font-family-base;
-      font-size: 59px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
+      @media #{$screen-desktop} {
+        font-size:55px;
+      }
+      @media #{$screen-lg-desktop} {
+        font-size: 59px;
+      }
     }
     h3 {
       font-family: $font-family-medium;
-      font-size: 25px;
+      font-size: 20px;
       margin: 45px auto 40px !important;
+      @media #{$screen-desktop} {
+        font-size: 25px;
+      }
     }
     h1,
     h2,
@@ -32,10 +46,16 @@
     }
     .social-media {
       position: absolute;
-      left:80px;
+      left:15px;
       bottom:50px;
       font-size: 15px;
       text-transform: uppercase;
+      @media #{$screen-tablet} {
+        left:30px;
+      }
+      @media #{$screen-desktop} {
+        left: 80px;
+      }
       a {
         float:left;
         text-indent: -9999px;

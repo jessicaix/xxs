@@ -12,12 +12,24 @@
   }    
   .field--name-field-text {
     font-family: $font-family-medium;
-    font-size: 26px;
+    font-size: 20px;
     text-align: center;
+    @media #{$screen-tablet} {
+      font-size: 26px;
+    }
     h2 {
       font-family: $font-family-bold;
-      font-size: 48px;
+      font-size: 30px;
       text-transform: none;
+      @media #{$screen-tablet} {
+        font-size: 40px;
+      }
+      @media #{$screen-desktop} {
+        font-size: 45px;
+      }
+      @media #{$screen-lg-desktop} {
+        font-size: 48px;
+      }
     }
   }
   .paragraph--type--text {
@@ -53,38 +65,71 @@
   .view-header {
     position: relative;
     float:left;
-    width: 33.33333%;
-    min-height: 400px;
-    padding: 60px 15px 50px 70px;
+    width: 100%;
+    padding: 60px 15px 50px 15px;
     font-size: 24px;
-    border-right: 2px solid $gray-lighter;
+    border-bottom: 2px solid $gray-lighter;
+    @media #{$screen-tablet} {
+      width: 50%;
+      min-height: 430px;
+      border-right: 2px solid $gray-lighter;
+      border-top: 1px solid $gray-lighter;
+      border-bottom: 1px solid $gray-lighter;
+      padding: 60px 15px 50px 40px;
+    }
+    @media #{$screen-desktop} {
+      width: 33.33333%;
+      min-height: 440px;
+      border-top: none;
+      border-bottom: none;
+    }
+    @media #{$screen-lg-desktop} {
+      min-height: 400px;
+      padding: 60px 15px 50px 70px;
+    }
   }
   .views-row {
     &:last-child {
-      border-right: none;
+      @media #{$screen-desktop} {
+        border-right:none;
+      }
     }
   }
   .small {
-    font-size: 27px;
+    font-size: 20px;
+    @media #{$screen-tablet} {
+      font-size: 27px;
+    }
   }
   h2 {
     font-family: $font-family-extrabold;
-    font-size: 32px;
+    font-size: 26px;
     text-transform: none;
     margin-bottom: 35px;
+    @media #{$screen-tablet} {
+      font-size: 30px;
+    }
+    @media #{$screen-desktop} {
+      font-size: 32px;
+    }
   }
   .link,
   .views-field-view-node {
-    position: absolute;
-    bottom: 50px;
-    margin: 0;
+    @media #{$screen-tablet} {
+      position: absolute;
+      bottom: 50px;
+      margin: 0;
+    }
     a {
       display: inline-block !important;
       opacity: 1;
       background:url(../images/arrow_right.png) no-repeat right center;
       font-family: $font-family-semibold;
-      font-size: 24px;
+      font-size: 20px;
       padding:3px 30px 3px 0;
+      @media #{$screen-tablet} {
+        font-size: 24px;
+      }
       &:hover {
         transform:translateX(15%);
       }
@@ -103,9 +148,12 @@
         position: relative;
         background: url(../images/bureaublad_rj-3.jpg) no-repeat center center;
         background-size: cover;
-        min-height: 430px;
+        min-height: 330px;
         padding: 100px 0;
         text-align: center;
+        @media #{$screen-tablet} {
+          min-height: 430px;
+        }
         .field--name-field-text {
           position: absolute;
           top:0;
@@ -113,15 +161,28 @@
           left:0;
           right: 0;
           margin: auto;
-          width: 60%;
+          width: 100%;
           display: inline-table;
           font-family: $font-family-medium;
-          font-size: 26px;
+          font-size: 20px;
+          @media #{$screen-tablet} {
+            width: 60%;
+            font-size: 26px;
+          }
           h2 {
             font-family: $font-family-bold;
-            font-size: 48px;
+            font-size: 30px;
             text-transform: none;
             margin:0 auto;
+            @media #{$screen-tablet} {
+              font-size: 40px;
+            }
+            @media #{$screen-desktop} {
+              font-size: 45px;
+            }
+            @media #{$screen-lg-desktop} {
+              font-size: 48px;
+            }
           }
           .small {
             margin:0 auto;
@@ -141,16 +202,28 @@
       margin:35px auto 50px;
     }
     h1 {
-      font-size: 55px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 55px;
+      }
     }
     h2 {
-      font-size: 45px;
+      font-size: 30px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
     }
     h3 {
-      font-size: 35px;
+      font-size: 25px;
+      @media #{$screen-tablet} {
+        font-size: 35px;
+      }
     }
     h4 {
-      font-size: 26px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 26px;
+      }
     }
   }
   #block-views-block-jobs-block-1 .views-row, #block-views-block-jobs-block-1 .view-header {

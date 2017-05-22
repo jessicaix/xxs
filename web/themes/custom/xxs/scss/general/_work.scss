@@ -19,8 +19,14 @@
   }
   .view-filters {
     text-align: right;
-    padding-right: 95px;
+    padding-right: 15px;
     margin-bottom: 45px;
+    @media #{$screen-tablet} {
+      padding-right: 60px;
+    }
+    @media #{$screen-desktop} {
+      padding-right: 95px;
+    }
     .select-wrapper,
     select {
       cursor: pointer;
@@ -29,29 +35,37 @@
   }
   .views-row {
     float:left;
-    width: 33.33333%;
+    width: 100%;
     padding: 1.5px 0;
     cursor: default;
+    @media #{$screen-tablet} {
+      width: 33.33333%;
+    }
     &:hover {
       .campaign-content {
         display: block;
       }
     }
-    &:nth-child(2),
-    &:nth-child(5),
-    &:nth-child(8),
-    &:nth-child(11),
-    &:nth-child(14),
-    &:nth-child(17),
-    &:nth-child(20),
-    &:nth-child(23),
-    &:nth-child(26),
-    &:nth-child(29) {
-      padding: 1.5px 3px;
+    @media #{$screen-tablet} {
+      &:nth-child(2),
+      &:nth-child(5),
+      &:nth-child(8),
+      &:nth-child(11),
+      &:nth-child(14),
+      &:nth-child(17),
+      &:nth-child(20),
+      &:nth-child(23),
+      &:nth-child(26),
+      &:nth-child(29) {
+        padding: 1.5px 3px;
+      }
     }
     h3 {
       font-size: 15px;
-      margin: 0 auto 35px;
+      margin: 0 auto 20px;
+      @media #{$screen-tablet} {
+        margin: 0 auto 35px;
+      }
     }
   }
   ul {
@@ -66,16 +80,32 @@
     margin: 0;
     max-height: 260px;
     overflow: hidden;
+    .field--name-field-image {
+      img {
+        @media #{$screen-tablet} {
+          min-height: 180px;
+        }
+        @media #{$screen-desktop} {
+          min-height: 197px;
+        }
+      }
+    }
     .campaign-content {
       display: none;
-      width: 81%;
+      width: 100%;
       height: 65%;
+      @media #{$screen-tablet} {
+        width: 81%;
+      }
     }
     .field--name-field-subtitle {
       margin-top: 5px;
     }
     .field--name-field-button {
-      margin-top:40px;
+      margin-top:20px;
+      @media #{$screen-tablet} {
+        margin-top:40px;
+      }
       a {
         font-size: 17px;
         padding: 10px 30px;
@@ -106,16 +136,28 @@
       margin:35px auto 50px;
     }
     h1 {
-      font-size: 55px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 55px;
+      }
     }
     h2 {
-      font-size: 45px;
+      font-size: 30px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
     }
     h3 {
-      font-size: 35px;
+      font-size: 25px;
+      @media #{$screen-tablet} {
+        font-size: 35px;
+      }
     }
     h4 {
-      font-size: 26px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 26px;
+      }
     }
   }
 }

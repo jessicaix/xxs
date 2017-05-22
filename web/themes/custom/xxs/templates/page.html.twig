@@ -179,16 +179,17 @@
           </aside>
         {% endblock %}
       {% endif %}
-      {% if page.footer %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% if page.footer %}
   {% block footer %}
     <footer class="footer {{ container }} section" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endblock %}
 {% endif %}
-    </div>
-</div>
-{% endblock %}
 {% if page.overlay %}
   {% block overlay %}
     <div class="overlay overlay-cornershape" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
@@ -202,4 +203,3 @@
     </div>
   {% endblock %}
 {% endif %}
-</div>

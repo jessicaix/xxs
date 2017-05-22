@@ -9,8 +9,11 @@
     display: block !important;
     opacity: 1;
     font-family: $font-family-light;
-    font-size: 29px;
+    font-size: 20px;
     line-height: 63px;
+    @media #{$screen-tablet} {
+      font-size: 29px;
+    }
     &:hover {
       text-decoration: none;
     }
@@ -26,7 +29,13 @@
     position: relative;
     float:left;
     a {
-      padding-left: 250px;
+      padding-left: 45px;
+      @media #{$screen-tablet} {
+        padding-left: 175px;
+      }
+      @media #{$screen-desktop} {
+        padding-left: 250px;
+      }
       &:hover {
         transform:translateX(-15%);
       }
@@ -44,7 +53,13 @@
     position: relative;
     float:right;
     a {
-      padding-right: 250px;
+      padding-right: 75px;
+      @media #{$screen-tablet} {
+        padding-right: 175px;
+      }
+      @media #{$screen-desktop} {
+        padding-right: 250px;
+      }
       &:hover {
         transform:translateX(15%);
       }

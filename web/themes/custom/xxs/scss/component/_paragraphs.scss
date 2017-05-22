@@ -23,7 +23,6 @@
   position: relative;
   color:#FFF;
   margin: 0 15px;
-  width: 98% !important;
   video {
     width: 100% !important;
     height: 100% !important;
@@ -48,10 +47,19 @@
     bottom:0;
     left:0;
     right: 0;
-    width: 60%;
+    width: 100%;
     height: 50%;
     margin: auto;
     text-align: center;
+    @media #{$screen-tablet} {
+      width: 80%;
+    }
+    @media #{$screen-desktop} {
+      width: 70%;
+    }
+    @media #{$screen-lg-desktop} {
+      width: 60%;
+    }
     .field--name-field-title {
       font-family: $font-family-extrabold;
       font-size: 110px;
@@ -66,7 +74,17 @@
       margin-top:30px;
     }
     .field--name-field-button {
-      margin-top:100px;
+      display: none;
+      @media #{$screen-tablet} {
+        display: inline-block;
+        margin-top:20px;
+      }
+      @media #{$screen-desktop} {
+        margin-top:40px;
+      }
+      @media #{$screen-lg-desktop} {
+        margin-top: 100px;
+      }
       a {
         color: #fff;
         &:hover {
@@ -76,8 +94,11 @@
     }
   }
   .field--name-field-scroll-down {
-    display: block !important;
+    display: none !important;
     opacity: 1;
+    @media #{$screen-tablet} {
+      display: block !important;
+    }
     a {
       position: absolute;
       bottom: 50px;
@@ -102,7 +123,12 @@
   font-family: $font-family-semibold;
   text-align: center;
   padding: 100px 0;
-  width: 98% !important;
+  .container {
+    padding: 0;
+    @media #{$screen-tablet} {
+      padding: 0 15px;
+    }
+  }
   .small {
     font-size: 20px;
     text-transform: uppercase;
@@ -124,9 +150,16 @@
     position: relative;
     overflow: hidden;
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     padding: 16px 42px;
-    margin:145px 31px 0;
+    margin:50px 31px 0;
+    @media #{$screen-tablet} {
+      font-size: 25px;
+      margin:100px 31px 0;
+    }
+    @media #{$screen-desktop} {
+      margin:145px 31px 0;
+    }
     &:hover {
       background-color: #000;
       color: #fff;
@@ -171,8 +204,14 @@
 .paragraph--type--campaign {
   position: relative;
   color:#FFF;
-  font-size: 80px;
+  font-size: 30px;
   margin: 0;
+  @media #{$screen-tablet} {
+    font-size: 50px;
+  }
+  @media #{$screen-desktop} {
+    font-family: 80px;
+  }
   video {
     width: 100% !important;
     height: 100% !important;
@@ -194,20 +233,31 @@
     bottom:0;
     left:0;
     right: 0;
-    width: 60%;
-    height: 50%;
+    width: 100%;
+    height: 60%;
     margin: auto;
     text-align: center;
+    @media #{$screen-tablet} {
+      width: 60%;
+      height: 50%;
+    }
     h3 {
       font-family: $font-family-base;
       color: #fff;
-      font-size: 20px;
-      margin:0 auto 45px;
+      font-size: 16px;
+      margin:0 auto 20px;
+      @media #{$screen-tablet} {
+        font-size: 20px;
+        margin: 0 auto 45px;
+      }
     }
     a {
       float: left; 
       color: #FFF;
-      font-size: 25px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 25px;
+      }
     }
   }
   .field--name-field-image {
@@ -217,17 +267,26 @@
   }
   .field--name-field-subtitle {
     font-family:$font-family-extrabold;
-    margin-top: 15px;
+    margin-top: 10px;
+    @media #{$screen-tablet} {
+      margin-top:15px;
+    }
   }
   .field--name-field-button {
-    margin-top: 80px;
+    margin-top: 15px;
+    @media #{$screen-tablet} {
+      margin-top:50px;
+    }
+    @media #{$screen-desktop} {
+      margin-top: 80px;
+    }
   }
   .field--name-field-scroll-down {
     display: block !important;
     opacity: 1;
     a {
       position: absolute;
-      bottom: 50px;
+      bottom: 15px;
       left:0;
       right: 0;
       margin: auto;
@@ -236,6 +295,9 @@
       background:url(../images/arrow_down_small.png) no-repeat center center;
       float:left;
       text-indent: -9999px;
+      @media #{$screen-tablet} {
+        bottom: 50px;
+      }
       &:hover {
         transform: translateY(30%);
       }
@@ -256,10 +318,21 @@
   }
   .field--name-field-title {
     font-family: $font-family-bold;
-    font-size: 100px;
+    font-size: 40px;
     color: $black;
     text-transform: uppercase;
-    margin:90px 0 55px;
+    margin:40px 0 50px;
+    @media #{$screen-tablet} {
+      font-size: 45px;
+      margin:45px 0 55px;
+    }
+    @media #{$screen-desktop} {
+      font-size: 80px;
+      margin:90px 0 55px;
+    }
+    @media #{$screen-lg-desktop} {
+      font-size: 100px;
+    }
   }
   .field--name-field-text {
     font-family: $font-family-medium;
@@ -274,7 +347,10 @@
   }
   .client {
     float:left;
-    width: 20%;
+    width: 50%;
+    @media #{$screen-tablet} {
+      width: 20%;
+    }
     h2 {
       display: none;
     }
@@ -300,8 +376,11 @@
 
 // Two column text paragraph
 .paragraph--type--two-column-text {
-  padding: 240px 0 160px;
+  padding: 100px 15px;
   margin: auto;
+  @media #{$screen-tablet} {
+    padding: 160px 0;
+  }
   .field--name-field-title {
     font-family: $font-family-medium;
     font-size: 40px;
@@ -312,48 +391,87 @@
     font-family: $font-family-bold;
     font-size: 40px;
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
+    @media #{$screen-tablet} {
+      margin-bottom: 90px;
+    }
   }
   .field--name-field-left-column {
     font-family: $font-family-light;
     float:left;
-    width: 50%;
-    padding-right: 50px;
+    width: 100%;
+    @media #{$screen-tablet} {
+      width: 50%;
+      padding-right: 25px;
+    }
+    @media #{$screen-desktop} {
+      padding-right: 50px;
+    }
     a {
       text-decoration: underline;
     }
     h1 {
-      font-size: 55px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 55px;
+      }
     }
     h2 {
-      font-size: 45px;
+      font-size: 30px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
     }
     h3 {
-      font-size: 35px;
+      font-size: 25px;
+      @media #{$screen-tablet} {
+        font-size: 35px;
+      }
     }
     h4 {
-      font-size: 26px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 26px;
+      }
     }
   }
   .field--name-field-right-column {
     font-family: $font-family-light;
     float:left;
-    width: 50%;
-    padding-left: 50px;
+    width: 100%;
+    @media #{$screen-tablet} {
+      width: 50%;
+      padding-left: 25px;
+    }
+    @media #{$screen-desktop} {
+      padding-left: 50px;
+    }
     a {
       text-decoration: underline;
     }
     h1 {
-      font-size: 55px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 55px;
+      }
     }
     h2 {
-      font-size: 45px;
+      font-size: 30px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
     }
     h3 {
-      font-size: 35px;
+      font-size: 25px;
+      @media #{$screen-tablet} {
+        font-size: 35px;
+      }
     }
     h4 {
-      font-size: 26px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 26px;
+      }
     }
   }
 }
@@ -362,31 +480,46 @@
 .paragraph--type--video  {
   position: relative;
   clear:left;
-  padding: 195px 0 180px;
+  padding: 100px 0;
+  @media #{$screen-tablet} {
+    padding: 150px 0;
+  }
+  @media #{$screen-desktop} {
+    padding: 195px 0 180px;
+  }
   .video-embed-field-responsive-video {
     max-height: 675px;
     overflow: hidden;
     margin: 0;
   }
   iframe {
-    width: 80%;
+    width: 100%;
     max-height: 675px;
     margin: auto;
+    @media #{$screen-tablet} {
+      width: 80%;
+    }
   }
   .field--name-field-caption {
     position: absolute;
-    left:80px;
-    bottom: 50px;
+    left:15px;
+    bottom: 15px;
     font-family: $font-family-light;
     font-size: 20px;
     color:#FFF;
+    @media #{$screen-tablet} {
+      left:60px;
+      bottom: 50px;
+    }
+    @media #{$screen-desktop} {
+      left: 95px;
+    }
   }
 }
 
 // Image paragraph 
 .paragraph--type--image {
   position: relative;
-  width: 98% !important;
   .field--name-field-image {
     position: relative;
     &:after {
@@ -404,21 +537,34 @@
   }
   .field--name-field-caption {
     position: absolute;
-    left:80px;
-    bottom: 50px;
+    left:15px;
+    bottom: 15px;
     font-family: $font-family-light;
     font-size: 20px;
     color:#FFF;
+    @media #{$screen-tablet} {
+      left: 60px;
+      bottom:50px;
+    }
+    @media #{$screen-desktop} {
+      left: 95px;
+    }
   }
 }
 
 // Project results paragraph
 .paragraph--type-project-results {
   margin: auto;
-  padding: 160px 0 205px;
+  padding: 100px 0;
+  @media #{$screen-tablet} {
+    padding: 160px 0 205px;
+  }
   .group-header {
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
+    @media #{$screen-tablet} {
+      margin-bottom: 150px;
+    }
     h3 {
       font-family: $font-family-medium;
       font-size: 40px;
@@ -431,29 +577,50 @@
     }
   }
   .group-left {
-    width:40%;
+    width:100%;
+    padding: 0 15px;
+    @media #{$screen-tablet} {
+      width: 40%;
+    }
     .field--label {
       font-family: $font-family-light;
-      font-size: 30px;
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 30px;
+      }
       &:after {
         content:":";
       }
     }
     .field--item {
       font-family: $font-family-bold;
-      font-size: 35px;
+      font-size: 26px;
+      @media #{$screen-tablet} {
+        font-size: 35px;
+      }
     }
     .field {
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+      @media #{$screen-tablet} {
+        margin-bottom: 50px;
+      }
     }
   }
   .group-right {
-    width: 60%;
+    width: 100%;
     font-family: $font-family-light;
-    font-size: 30px;
-    text-align: center;
-    .intro {
+    font-size: 20px;
+    text-align: left;
+    padding: 0 15px;
+    @media #{$screen-tablet} {
+      width: 60%;
       font-size: 30px;
+    }
+    .intro {
+      font-size: 20px;
+      @media #{$screen-tablet} {
+        font-size: 30px;
+      }
     }
   }
 }
