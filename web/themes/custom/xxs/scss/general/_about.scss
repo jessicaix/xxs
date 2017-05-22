@@ -2,24 +2,63 @@
   .field--item {
     &:first-child {
       .paragraph--type--header {
-        .header-content {
-          &:before {
-            content:"We are";
-            font-size: 20px;
-            text-transform: uppercase;
+        background:url(../images/header_bg.png) no-repeat center center;
+        height: 393px;
+        max-height: inherit;
+        overflow: hidden;
+        background-size: cover;
+        @media #{$screen-tablet} {
+          height: 593px;
+        }
+        @media #{$screen-desktop} {
+          height: 693px;
+        }
+        @media #{$screen-lg-desktop} {
+          height: 793px;
+        }        
+        .field--name-field-title {
+          font-family: $font-family-semibold !important;
+          font-size: 25px !important;
+          @media #{$screen-tablet} {
+            font-size: 30px !important;
+          }
+          @media #{$screen-desktop} {
+            font-size: 40px !important;
+          }
+          @media #{$screen-lg-desktop} {
+            font-size: 50px !important; 
+          }                    
+        }
+        .field--name-field-subtitle {
+          font-family: $font-family-extrabold !important;
+          font-size: 40px !important;
+          margin-top:30px !important;
+          @media #{$screen-tablet} {
+            font-size: 60px !important;
+          }
+          @media #{$screen-desktop} {
+            font-size: 70px !important;
+          }
+          @media #{$screen-lg-desktop} {
+            font-size: 80px !important;
           }
         }
-        .field--name-field-title {
-          margin-top:50px;
+        .field--name-field-subtitle2 {
+          margin-top:30px;
+          font-style: italic;
         }
       }
     }
     &:nth-child(3) {
       .paragraph--type--text {
-        background: $gray-light url(../images/xxs_bg.png) no-repeat top 120px center;
+        background: $gray-light url(../images/xxs_bg.png) no-repeat top -90px left -250px;
         padding:120px 0;
-        margin: 0;
-        min-height: 3092px;
+        margin: 0 auto;
+        min-height: 2872px;
+        @media #{$screen-tablet} {
+          background: $gray-light url(../images/xxs_bg.png) no-repeat top 120px center;
+          min-height: 3092px;
+        }
       }
     }
   }
@@ -31,24 +70,66 @@
     }
   }
   .paragraph--type--text {
+    font-family: $font-family-semibold;
+    text-align: center;
     .about-block {
       font-family: $font-family-light;
       float: left;
       max-width: 655px;
-      font-size: 26px;
+      font-size: 20px;
       text-align: right;
+      @media #{$screen-tablet} {
+        font-size: 26px;
+      }
+      &.insights {
+        @media #{$screen-tablet} {
+          padding-right: 110px;
+        }
+        @media #{$screen-desktop} {
+          padding-right: 0;
+        }
+      }
       &.concepts {
         float: right;
         text-align: left;
-        margin-top: 495px;
+        margin-top: 575px;
+        @media #{$screen-tablet} {
+          margin-top: 565px;
+        }
+        @media #{$screen-desktop} {
+          margin-top: 560px;
+        }
+        @media #{$screen-lg-desktop} {
+          margin-top: 495px;
+        }
       }
       &.journey {
-        margin-top:545px;
+        margin-top:755px;
+        @media #{$screen-tablet} {
+          margin-top:600px;
+          padding-right: 110px;
+        }
+        @media #{$screen-desktop} {
+          margin-top:590px;
+          padding-right: 0;
+        }
+        @media #{$screen-lg-desktop} {
+          margin-top:545px;
+        }
       }
       h1 {
-        font-size: 150px;
+        font-size: 40px;
         line-height: 0.87;
         margin: -10px 0 20px;
+        @media #{$screen-tablet} {
+          font-size: 100px;
+        }
+        @media #{$screen-desktop} {
+          font-size: 115px;
+        }
+        @media #{$screen-lg-desktop} {
+          font-size: 130px;
+        }
         span {
           font-family: $font-family-base;
         }
@@ -62,14 +143,29 @@
 #block-views-block-people-block-1 {
   background-color: $gray-light;
   .block-title {
-    font-size: 100px;
+    font-size: 40px;
     text-align: center;
     margin: 115px 0 80px;
+    @media #{$screen-tablet} {
+      font-size: 45px;
+    }
+    @media #{$screen-desktop} {
+      font-size: 80px;
+    }
+    @media #{$screen-lg-desktop} {
+      font-size: 100px;
+    }
   }
   .views-row {
     position: relative;
     float:left;
-    width: 25%;
+    width: 100%;
+    @media #{$screen-tablet} {
+      width: 33.33333%;
+    }
+    @media #{$screen-desktop} {
+      width: 25%;
+    }
     &:hover {
       .views-field-field-image {
         &:before {
@@ -102,10 +198,11 @@
       margin: auto;
       width: 100%;
       height: 50%;
+      font-size: 20px;
     }
     h2 {
       font-family: $font-family-bold;
-      font-size: 30px;
+      font-size: 26px;
       margin-top:0;
     }
     a {

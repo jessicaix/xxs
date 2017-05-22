@@ -17,14 +17,61 @@
   }      
   .social-media {
     float:left;
-    width: 33.33333%;
-    padding-left: 95px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    @media #{$screen-tablet} {
+      width: 27.5%;
+      padding-left: 95px;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    @media #{$screen-desktop} {
+      width: 25%;
+    }
+    a {
+      display: inline-block;
+      text-indent: -9999px;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      &.facebook {
+        background:url(../images/facebook.png) no-repeat center center;
+        &:hover {
+          background:url(../images/facebook_hover.png) no-repeat center center;
+        }
+      }
+      &.linkedin {
+        background:url(../images/linkedin.png) no-repeat center center;
+        &:hover {
+          background:url(../images/linkedin_hover.png) no-repeat center center;
+        }
+      }
+      &.instagram {
+        background:url(../images/instagram.png) no-repeat center center;
+        &:hover {
+          background:url(../images/instagram_hover.png) no-repeat center center;
+        }
+      }
+      &.twitter {
+        background:url(../images/twitter.png) no-repeat center center;
+        &:hover {
+          background:url(../images/twitter_hover.png) no-repeat center center;
+        }
+      }                  
+    }
   }
   .footer-menu {
     float: left;
-    width: 33.33333%;
+    width: 100%;
     color: $gray-dark;
     text-align: center;
+    @media #{$screen-tablet} {
+      width: 45%;
+    }
+    @media #{$screen-tablet} {
+      width: 50%;
+    }
     ul {
       padding: 0;
       margin: 0;
@@ -32,8 +79,10 @@
     li {
       display: inline-block;
       list-style-type: none;
-      line-height: 13px;
       overflow: hidden;
+      @media #{$screen-tablet} {
+        line-height: 13px;
+      }
       &:last-child {
         a {
           border-right: none;

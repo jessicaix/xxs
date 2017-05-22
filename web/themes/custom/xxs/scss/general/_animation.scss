@@ -1,0 +1,24 @@
+/* // HOMEPAGE HEADER ANIMATION
+.field--item:first-child {
+  .paragraph {
+    .header-content,
+    .campaign-content,
+    .field--name-field-text {
+        animation: 5s slide-up;
+        margin-top:auto;
+    }
+  }
+}
+
+@keyframes slide-up {
+  from {
+    margin-top:50%;
+    height: -300%;
+  }
+  
+  to {
+    margin-top: auto;
+    height: 50%;
+  }
+}
+*/

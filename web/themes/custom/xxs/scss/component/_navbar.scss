@@ -3,16 +3,27 @@ $color_2: #fff;
 $color_3: #f0f0f0;
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
-  z-index: 99;
-  width: 100%;
+  z-index: 999;
   background-color: transparent;
   border-color: transparent;
   .logo {
     display: block;
-    margin:45px 0 0 80px;
+    margin:30px 0 0 30px;
+    @media #{$screen-tablet} {
+      margin: 45px 0 0 30px;
+    }
+    @media #{$screen-desktop} {
+      margin: 45px 0 0 80px;
+    }
+    img {
+      max-width: 70%;
+      @media #{$screen-tablet} {
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -20,6 +31,9 @@ $color_3: #f0f0f0;
 .user-logged-in {
   .nav-tabs {
     position: relative;
+    z-index: 99;
+  }
+  .navbar {
     z-index: 99;
   }
 }
@@ -35,58 +49,171 @@ $color_3: #f0f0f0;
 .overlay {
   position: fixed;
   width: 100%;
-  height: 80%;
+  height: 100%;
   top: 0;
   left: 0;
-  background: rgba(153,204,51,0.9);
+  z-index: 999;
+  background: transparent url(../images/header_bg.png) no-repeat center center !important;
+  background-size: cover !important;
+  &:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom:-100%;
+    content:"";
+    background:rgba(51,51,51,0.76);
+  }
   .overlay-close {
     width: 80px;
     height: 80px;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 30px;
+    top: 30px;
     overflow: hidden;
     border: none;
-    background: url(../img/cross.png) no-repeat center center;
+    background: url(../images/close.png) no-repeat center center;
+    width: 19px;
+    height: 19px;
     text-indent: 200%;
     color: $color_1;
     outline: none;
     z-index: 100;
+    @media #{$screen-tablet} {
+      top: 60px;
+      right: 60px;
+    }
+    @media #{$screen-desktop} {
+      right: 95px;
+      top:60px;
+    }
   }
   nav {
     text-align: center;
     position: relative;
     top: 50%;
-    height: 60%;
+    height: 100%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
+    margin: 100% auto 0;
     display: inline-block;
     height: 100%;
+    width: 100%;
     position: relative;
+    @media #{$screen-tablet} {
+      margin:0 auto;
+    }
     li {
+      position: relative;
+      float:left;
+      width: 100%;
       display: block;
       height: 20%;
       height: calc(100% / 5);
       min-height: 54px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      a {
-        font-size: 54px;
-        font-weight: 300;
-        display: block;
-        color: $color_2;
-        -webkit-transition: color 0.2s;
-        transition: color 0.2s;
-        &:hover {
-          color: $color_3;
+      &:nth-child(4),
+      &:nth-child(5) {
+       a {
+          font-family: $font-family-semibold;
+          font-size: 20px;
+          @media #{$screen-tablet} {
+            font-size: 30px;
+          }
+       }
+      }
+      &:nth-child(4) {
+        margin-top:25px;
+        @media #{$screen-tablet} {
+          margin-top: 45px;
         }
+      }
+      a {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        font-family: $font-family-bold;
+        font-size: 40px;
+        color: $color_2;
+        line-height: 1;
+        padding: 5px 25px;
+        margin:0 31px;
+        @media #{$screen-tablet} {
+          font-size: 70px;
+          padding: 5px 55px;
+        }
+        @media #{$screen-desktop} {
+          font-size: 80px;
+        }
+        @media #{$screen-lg-desktop} {
+          font-size: 90px;
+        }
+        &:hover,
         &:focus {
-          color: $color_3;
+          background-color: #fff;
+          color: #000;
+          text-decoration: none;
+          &:after {
+            border-top: 30px solid transparent;
+            border-left: 30px solid #fff;
+            border-bottom: 30px solid transparent;
+          }
+          &:before {
+            border-top: 30px solid transparent;
+            border-right: 30px solid #fff;
+            border-bottom: 30px solid transparent;
+          }
+        } 
+      }  
+      &.active {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        a {
+          &:hover,
+          &:focus {
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            &:after {
+              border-top: 30px solid transparent;
+              border-left: 30px solid #fff;
+              border-bottom: 30px solid transparent;
+            }
+            &:before {
+              border-top: 30px solid transparent;
+              border-right: 30px solid #fff;
+              border-bottom: 30px solid transparent;
+            }
+          }  
+          &:before {
+            opacity: 1;
+            content:"";
+            position: absolute;
+            left: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            width: 17px;
+            height: 31px;
+            background:url(../images/arrow_left_small_white.png) no-repeat left center;
+          }
+          &:after {
+            opacity: 1;
+            content:"";
+            position: absolute;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            width: 17px;
+            height: 31px;
+            background:url(../images/arrow_right_small_white.png) no-repeat right center;
+          }
         }
       }
     }
@@ -103,7 +230,7 @@ $color_3: #f0f0f0;
     left: 0;
   }
   .overlay-path {
-    fill: rgba(153,204,51,0.9);
+    fill: none;
   }
   nav {
     opacity: 0;
@@ -144,7 +271,7 @@ $color_3: #f0f0f0;
 @media screen and (max-height: 30.5em) {
   .overlay {
     nav {
-      height: 70%;
+      height: 100%;
       font-size: 34px;
     }
     ul {
@@ -155,3 +282,116 @@ $color_3: #f0f0f0;
   }
 }
 
+
+// Menu toggle
+#trigger-overlay {
+  position: absolute;
+  top:30px;
+  right:30px;
+  z-index: 999;
+  background:transparent url(../images/menu_toggle.png) no-repeat center center;
+  width: 24px;
+  height: 10px;
+  border:none;
+  float:left;
+  text-indent: -9999px;
+  @media #{$screen-tablet} {
+    top:60px;
+    right: 60px;
+  }
+  @media #{$screen-desktop} {
+    right: 95px;
+  }
+}
+
+// Menu footer
+#block-menufooter {
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom:20px;
+  float:left;
+  width: 100%;
+  color: $gray-dark;
+  @media #{$screen-tablet} {
+    bottom: 40px;
+  }
+  .social-media {
+    float:left;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    @media #{$screen-tablet} {
+      width: 50%;
+      padding-left: 95px;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    a {
+      display: inline-block;
+      text-indent: -9999px;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      text-decoration: none;
+      &.facebook {
+        background:url(../images/facebook.png) no-repeat center center;
+        &:hover {
+          background:url(../images/facebook_hover.png) no-repeat center center;
+        }
+      }
+      &.linkedin {
+        background:url(../images/linkedin.png) no-repeat center center;
+        &:hover {
+          background:url(../images/linkedin_hover.png) no-repeat center center;
+        }
+      }
+      &.instagram {
+        background:url(../images/instagram.png) no-repeat center center;
+        &:hover {
+          background:url(../images/instagram_hover.png) no-repeat center center;
+        }
+      }
+      &.twitter {
+        background:url(../images/twitter.png) no-repeat center center;
+        &:hover {
+          background:url(../images/twitter_hover.png) no-repeat center center;
+        }
+      }
+    }
+  }
+  .copyright {
+    float:left;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    @media #{$screen-tablet} {
+      width: 50%;
+      text-align: right;
+      padding-right: 95px;
+    }
+  }
+}
+
+
+// Logo
+.overlay {
+  .logo {
+    display: block;
+    margin:30px 0 0 15px;
+    @media #{$screen-tablet} {
+      margin: 45px 0 0 60px;
+    }
+    @media #{$screen-desktop} {
+      margin: 45px 0 0 80px;
+    }
+    img {
+      max-width: 80%;
+      @media #{$screen-tablet} {
+        max-width: 100%;
+      }
+    }
+  }
+}

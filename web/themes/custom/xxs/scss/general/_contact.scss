@@ -1,9 +1,16 @@
 .path-node-51 {
+  #trigger-overlay {
+    background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
+  }
   .paragraph--type--text {
     position: relative;
+    background: url(../images/bureaublad_rj-3.jpg) no-repeat center center;
+    background-size: cover;
     font-family: $font-family-light;
     font-size: 20px;
     text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
     p {
       &:last-child {
         margin-bottom: 220px;
@@ -11,12 +18,24 @@
     }
     h1 {
       font-family: $font-family-base;
-      font-size: 59px;
+      font-size: 40px;
+      @media #{$screen-tablet} {
+        font-size: 45px;
+      }
+      @media #{$screen-desktop} {
+        font-size:55px;
+      }
+      @media #{$screen-lg-desktop} {
+        font-size: 59px;
+      }
     }
     h3 {
       font-family: $font-family-medium;
-      font-size: 25px;
+      font-size: 20px;
       margin: 45px auto 40px !important;
+      @media #{$screen-desktop} {
+        font-size: 25px;
+      }
     }
     h1,
     h2,
@@ -27,22 +46,59 @@
     }
     .social-media {
       position: absolute;
-      left:80px;
+      left:15px;
       bottom:50px;
       font-size: 15px;
       text-transform: uppercase;
+      @media #{$screen-tablet} {
+        left:30px;
+      }
+      @media #{$screen-desktop} {
+        left: 80px;
+      }
       a {
+        float:left;
+        text-indent: -9999px;
+        width: 24px;
+        height: 24px;
         text-decoration: none;
+        margin-right: 10px;
+        &.facebook {
+          background:url(../images/facebook.png) no-repeat center center;
+          &:hover {
+            background: url(../images/facebook_hover.png) no-repeat center center;
+          }
+        }
+        &.linkedin {
+          background:url(../images/linkedin.png) no-repeat center center;
+          &:hover {
+            background:url(../images/linkedin_hover.png) no-repeat center center;
+          }
+        }
+        &.instagram {
+          background:url(../images/instagram.png) no-repeat center center;
+          &:hover {
+            background:url(../images/instagram_hover.png) no-repeat center center;
+          }
+        }
+        &.twitter {
+          background:url(../images/twitter.png) no-repeat center center;
+          &:hover {
+            background:url(../images/twitter_hover.png) no-repeat center center;
+          }
+        }         
       }
     }
   }
   .paragraph--type--image {
-    margin: 0;
+    margin: 0 15px 15px;
   }
   .field--name-field-paragraphs {
     position: relative;
   }
   .field--name-field-scroll-down {
+    display: block !important;
+    opacity: 1;
     a {
       font-family: $font-family-light;
       font-size: 20px;
@@ -56,6 +112,10 @@
       background:url(../images/arrow_down_black.png) no-repeat center bottom;
       text-align: center;
       text-decoration: none;
+      transition:all 0.5s ease-in-out;
+      &:hover {
+        transform: translateY(30%);
+      }  
       &.career {
         display: none;
       }

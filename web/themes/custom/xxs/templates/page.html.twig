@@ -57,35 +57,12 @@
  */
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+
 {# Preloader #}
-<section class="preloader" aria-busy="true" aria-label="Loading, please wait...">
-  <svg class="preloader__x" xmlns="http://www.w3.org/2000/svg" width="937" height="1024" viewBox="0 0 937 1024">
-    <text fill="#ffffff" fill-rule="evenodd" transform="translate(-33 -922)" font-size="2040" font-family="Helvetica">
-      <tspan x="0" y="1979">x</tspan>
-    </text>
-  </svg>
-
-  <div class="preloader__part preloader__part--left">
-    <svg class="" xmlns="http://www.w3.org/2000/svg" width="883" height="1024" viewBox="0 0 883 1024">
-      <path fill-rule="evenodd" d="M881.572 509.374L531.648 1024H1V0h530.648"/>
-    </svg>
-  </div>
-
-  <svg class="preloader__part preloader__part--top" xmlns="http://www.w3.org/2000/svg" width="1138" height="872" viewBox="0 0 1138 872">
-    <path fill-rule="evenodd" d="M562.827 871.044L1 1h1136.36"/>
-  </svg>
-
-
-  <div class="preloader__part preloader__part--right">
-    <svg xmlns="http://www.w3.org/2000/svg" width="883" height="1024" viewBox="0 0 883 1024">
-      <path fill-rule="evenodd" d="M1 509.374L350.924 1024h530.648V0H350.924"/>
-    </svg>
-  </div>
-
-  <svg class="preloader__part preloader__part--bottom" xmlns="http://www.w3.org/2000/svg" width="1138" height="871" viewBox="0 0 1138 871">
-    <path fill-rule="evenodd" d="M562.828 0L1 870.043h1136.36"/>
-  </svg>
-</section>
+<div id="preloader">
+  <div id="logo"></div>
+</div>
+<div id="fullpage">
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
@@ -111,6 +88,7 @@
             <span class="icon-bar"></span>
           </button>
         {% endif %}
+        <button id="trigger-overlay" type="button">Open Overlay</button>
       </div>
 
       {# Navigation (collapsible) #}
@@ -202,17 +180,16 @@
         {% endblock %}
       {% endif %}
     </div>
+  </div>
 </div>
 {% endblock %}
-
 {% if page.footer %}
   {% block footer %}
-    <footer class="footer {{ container }}" role="contentinfo">
+    <footer class="footer {{ container }} section" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endblock %}
 {% endif %}
-<button id="trigger-overlay" type="button">Open Overlay</button>
 {% if page.overlay %}
   {% block overlay %}
     <div class="overlay overlay-cornershape" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
