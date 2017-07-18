@@ -23,5 +23,8 @@ regions:
 libraries:
   - 'xxs/global-styling'
   - 'xxs/bootstrap-scripts'
+  - 'xxs/wow'
   - 'xxs/menu'
+  - 'xxs/fullpage'
   - 'xxs/main'
+

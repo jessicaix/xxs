@@ -1,6 +1,4 @@
-#wrapper{
-  display: none;
-}
+// Preloader
 #preloader {
   &.loaded {
     height: 100vh;
@@ -47,18 +45,27 @@ diamond {  0% {
 
 /* CROSS TRANSITION */
 
-.cross {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  animation-duration: 1s;
-  animation-name: fadeCross;
 
+.cross-wrapper {
+  position: relative;
+  .cross {
+    position: absolute !important;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    animation-duration: 1s;
+    -webkit-animation-name: fadeCross;
+    animation-name: fadeCross;
+  }
   .left-top {
     position: relative;
     width: 50%;
     float: left;
-    height: 125px;
+    height: 50%;
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-duration: .8s;
@@ -74,7 +81,7 @@ diamond {  0% {
     position: relative;
     width: 50%;
     float: right;
-    height: 125px;
+    height: 50%;
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-duration: .8s;
@@ -90,7 +97,7 @@ diamond {  0% {
     position: relative;
     width: 50%;
     float: left;
-    height: 125px;
+    height: 50%;
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-duration: .8s;
@@ -106,7 +113,7 @@ diamond {  0% {
     position: relative;
     width: 50%;
     float: right;
-    height: 125px;
+    height: 50%;
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-duration: .8s;
@@ -116,6 +123,19 @@ diamond {  0% {
     z-index: 1;
     &.animated {
       display: none;
+    }
+  }
+  .campaign-content,
+  .views-field-field-email {
+    opacity: 0;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    animation-name: fadeAndScale;
+    z-index: 9;
+    &.animated {
+      opacity: 1;
     }
   }
 }
@@ -130,6 +150,7 @@ diamond {  0% {
     transform: scale(1, 1);
   }
 }
+/*
 @keyframes fadeCross {
   from {
     transform: scale(.1, .1);
@@ -138,6 +159,29 @@ diamond {  0% {
     transform: scale(1, 1);
   }
 }
+*/
+
+@-webkit-keyframes fadeCross {
+  0% {
+    transform: scale(.1, .1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes fadeCross {
+  0% {
+    transform: scale(.1, .1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+
 @keyframes growCross {
   from {
     transform: scale(1, 1);

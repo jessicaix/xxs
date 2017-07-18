@@ -1,11 +1,20 @@
 // WORK OVERVIEW
 .path-node-50 {
+  .field--item:first-child {
+    .paragraph {
+      margin-top: 0;
+    }
+  }
   .paragraph--type--campaign {
-    margin:0 15px;
+    margin:0;
+    .cross {
+      display: none;
+    }
   }
   .paragraph--type--text {
     font-family: $font-family-semibold;
     text-align: center;
+    padding: 60px 0;
   }
   .footer {
     margin-top:-1.5px;
@@ -36,7 +45,6 @@
   .views-row {
     float:left;
     width: 100%;
-    padding: 1.5px 0;
     cursor: default;
     @media #{$screen-tablet} {
       width: 33.33333%;
@@ -46,25 +54,11 @@
         display: block;
       }
     }
-    @media #{$screen-tablet} {
-      &:nth-child(2),
-      &:nth-child(5),
-      &:nth-child(8),
-      &:nth-child(11),
-      &:nth-child(14),
-      &:nth-child(17),
-      &:nth-child(20),
-      &:nth-child(23),
-      &:nth-child(26),
-      &:nth-child(29) {
-        padding: 1.5px 3px;
-      }
-    }
     h3 {
       font-size: 15px;
       margin: 0 auto 20px;
       @media #{$screen-tablet} {
-        margin: 0 auto 35px;
+        margin: 0 auto 39px;
       }
     }
   }
@@ -80,6 +74,9 @@
     margin: 0;
     max-height: 260px;
     overflow: hidden;
+    .cross {
+      display: block;
+    }
     .field--name-field-image {
       img {
         @media #{$screen-tablet} {
@@ -90,8 +87,13 @@
         }
       }
     }
+    .campaign-bg {
+      height: auto;
+      img {
+        display: block;
+      }
+    }
     .campaign-content {
-      display: none;
       width: 100%;
       height: 65%;
       @media #{$screen-tablet} {
@@ -125,8 +127,18 @@
 
 // WORK DETAILPAGE
 .page-node-type-project {
+  #wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  .field--item:first-child {
+    .paragraph {
+      margin-top:0;
+    }
+  }
+
   .paragraph--type--campaign {
-    margin: 0 15px;
+    margin: 0;
     .field--name-field-button {
       display: none;
     }

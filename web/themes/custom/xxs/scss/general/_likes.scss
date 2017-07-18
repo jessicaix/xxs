@@ -5,6 +5,11 @@
   #trigger-overlay {
     background:transparent url(../images/menu_toggle_black.png) no-repeat center center;
   }
+  .view-header {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .view-likes {
@@ -23,7 +28,7 @@
       margin: 7.5px;
     }
     @media #{$screen-desktop} {
-      min-height: 485px;
+      min-height: 450px;
       width: 30%;
       margin: 15px;
     }
@@ -270,21 +275,20 @@
 
 // LIKES HOMEPAGE
 #block-views-block-likes-block-1 {
-  background: url(../images/lines_bg.png) repeat-y center center;
+  background: #FFF url(../images/lines_bg.png) repeat-y center center;
   background-size: cover;
-  padding: 100px 15px;
+  padding: 40px 15px;
   @media #{$screen-tablet} {
-    padding: 190px 15px 115px;
+    padding: 40px 15px 45px;
   }
   .block-title {
     font-family: $font-family-bold;
     font-size: 40px;
     color:$black;
     text-align: center;
-    margin:0 0 50px;
+    margin:0;
     @media #{$screen-tablet} {
       font-size: 45px;
-      margin:0 0 100px;
     }
     @media #{$screen-desktop} {
       font-size: 80px;
@@ -293,7 +297,12 @@
       font-size: 100px;
     }
   }
+  .view-content {
+    margin:30px 0 60px;
+  }
   .view-footer {
+    float: left;
+    width: 100%;
     text-align: center;
     a {
       position: relative;
@@ -301,29 +310,33 @@
       font-size: 20px;
       padding: 5px;
       color:#000000;
-      background-image: linear-gradient(#000000, #000000);
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: 0% 100%;
-      transition: background-size .5s, color .5s;
-      margin-top:65px;
       @media #{$screen-tablet} {
-        margin-top:125px;
         padding: 20px 42px;
+        background-image: linear-gradient(#000000, #000000);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        transition: background-size .5s, color .5s;
       }
       &:hover {
-        background-size: 100% 100%;
-        color: #FFF;
         text-decoration: none;
-        &:after {
-          border-top: 30px solid transparent;
-          border-left: 30px solid #000;
-          border-bottom: 30px solid transparent;
-        }
-        &:before {
-          border-top: 30px solid transparent;
-          border-right: 30px solid #000;
-          border-bottom: 30px solid transparent;
+        @media #{$screen-tablet} {
+          background-size: 100% 100%;
+          color: #FFF;
+          &:after {
+            border-top: 30px solid transparent;
+            border-left: 30px solid #000;
+            border-bottom: 30px solid transparent;
+            transition:0.2s ease-in-out;
+            transition-delay: 0.4s;
+          }
+          &:before {
+            border-top: 30px solid transparent;
+            border-right: 30px solid #000;
+            border-bottom: 30px solid transparent;
+            transition:0.2s ease-in-out;
+            transition-delay: 0.4s;
+          }
         }
       }
       &:before {

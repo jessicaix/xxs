@@ -2,6 +2,15 @@
   background: url(../images/footer_bg.png) no-repeat center center;
   background-size: cover;
   padding: 0;
+
+  .fp-tableCell {
+    vertical-align: top;
+  }
+}
+#block-newslettersignup {
+  .cta {
+    display: none;
+  }
 }
 #block-footer {
   color: $gray-dark;

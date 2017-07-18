@@ -1,55 +1,66 @@
 .path-frontpage {
-  .field--item:first-child {
-    .paragraph--type--header {
-      background: none !important;
-      max-height: inherit !important;
-      height: inherit !important;
-      .header-content {
-        display: block !important;
-        height: 50% !important;
-      }
-      .field--name-field-title {
-        font-family: $font-family-semibold !important;
-        font-size: 25px !important;
-        @media #{$screen-tablet} {
-          font-size: 30px !important;
+  .field--item {
+    &:first-child {
+      .paragraph--type--header {
+        width: 100%;
+        background: none !important;
+        max-height: inherit !important;
+        height: inherit !important;
+        margin:0 !important;
+        .header-content {
+          display: block !important;
+          height: 60% !important;
+          z-index: 2;
         }
-        @media #{$screen-desktop} {
-          font-size: 40px !important;
+        .field--name-field-scroll-down {
+          a {
+            z-index: 3;
+          }
         }
-        @media #{$screen-lg-desktop} {
-          font-size: 50px !important;
+        .field--name-field-title {
+          font-family: $font-family-semibold !important;
+          font-size: 25px !important;
+          @media #{$screen-tablet} {
+            font-size: 30px !important;
+          }
+          @media #{$screen-desktop} {
+            font-size: 40px !important;
+          }
+          @media #{$screen-lg-desktop} {
+            font-size: 50px !important;
+          }
         }
-      }
-      .field--name-field-subtitle {
-        font-family: $font-family-extrabold !important;
-        font-size: 25px !important;
-        margin-top:10px !important;
-        @media #{$screen-tablet} {
-          font-size: 60px !important;
-          margin-top:20px !important;
+        .field--name-field-subtitle {
+          font-family: $font-family-extrabold !important;
+          font-size: 25px !important;
+          margin-top:10px !important;
+          @media #{$screen-tablet} {
+            font-size: 60px !important;
+            margin-top:20px !important;
+          }
+          @media #{$screen-desktop} {
+            font-size: 70px !important;
+            margin-top:30px !important;
+          }
+          @media #{$screen-lg-desktop} {
+            font-size: 80px !important;
+          }
         }
-        @media #{$screen-desktop} {
-          font-size: 70px !important;
-          margin-top:30px !important;
+        .field--name-field-subtitle2 {
+          font-size: 20px;
+          margin-top:10px;
+          font-style: italic;
+          @media #{$screen-tablet} {
+            margin-top: 20px;
+          }
+          @media #{$screen-desktop} {
+            font-size: 26px;
+            margin-top:30px;
+          } 
         }
-        @media #{$screen-lg-desktop} {
-          font-size: 80px !important;
-        }
-      }
-      .field--name-field-subtitle2 {
-        font-size: 20px;
-        margin-top:10px;
-        font-style: italic;
-        @media #{$screen-tablet} {
-          margin-top: 20px;
-        }
-        @media #{$screen-desktop} {
-          font-size: 26px;
-          margin-top:30px;
-        } 
-      }
+      }   
     }
+
   }
   .paragraph--type--text {
     font-family: $font-family-semibold !important;

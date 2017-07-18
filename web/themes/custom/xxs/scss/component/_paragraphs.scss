@@ -1,7 +1,7 @@
 // Paragraphs
 .paragraph {
-  margin:0 15px;
-  
+  margin: 0 15px;
+
   .field--name-field-title,
   .field--name-field-subtitle {
     line-height: 0.9;
@@ -12,40 +12,66 @@
     }
   }
 }
+
 .field--item:first-child {
   .paragraph {
-    margin-top:15px;
+    margin-top: 15px;
   }
 }
 
 // Header paragraph
 .paragraph--type--header {
   position: relative;
-  color:#FFF;
+  color: #FFF;
   margin: 0 15px;
   video {
-    width: 100% !important;
-    height: 100% !important;
+    @media screen and (orientation: landscape) {
+      width: 100vw !important;
+      height: auto !important;
+    }
+
+    @media screen and (orientation: portrait) {
+      height: 100vh !important;
+      width: auto !important;
+    }
   }
   img {
     width: 100%;
   }
   .header-bg {
+    height:100%;
+    width:100%;
+    max-width:100%;
+    position:relative;
+    overflow: hidden;
+
+    video{
+      object-fit: fill;
+      position:absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+      min-width:100%;
+      min-height:100%;
+    }
+
     &:after {
       content: "";
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
   .header-content {
     position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
     right: 0;
     width: 100%;
     height: 50%;
@@ -68,19 +94,19 @@
     .field--name-field-subtitle {
       font-family: $font-family-semibold;
       font-size: 30px;
-      margin-top:60px;
+      margin-top: 60px;
     }
     .field--name-field-subtitle2 {
-      margin-top:30px;
+      margin-top: 30px;
     }
     .field--name-field-button {
       display: none;
       @media #{$screen-tablet} {
         display: inline-block;
-        margin-top:20px;
+        margin-top: 20px;
       }
       @media #{$screen-desktop} {
-        margin-top:40px;
+        margin-top: 40px;
       }
       @media #{$screen-lg-desktop} {
         margin-top: 100px;
@@ -102,15 +128,23 @@
     a {
       position: absolute;
       bottom: 50px;
-      left:0;
+      left: 0;
       right: 0;
       margin: auto;
       width: 98px;
       height: 48px;
-      background:url(../images/arrow_down.png) no-repeat center center;
-      float:left;
+      background: url(../images/arrow_down.png) no-repeat center center;
+      float: left;
       text-indent: -9999px;
-      transition:all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      @media #{$screen-tablet} {
+        bottom: 10px;
+        width: 58px;
+      }
+      @media #{$screen-desktop} {
+        bottom: 50px;
+        width: 98px;
+      }
       &:hover {
         transform: translateY(30%);
       }
@@ -120,6 +154,7 @@
 
 // Text paragraph
 .paragraph--type--text {
+  background-color: #FFF;
   font-family: $font-family-semibold;
   text-align: center;
   padding: 100px 0;
@@ -135,12 +170,12 @@
   }
   h2 {
     font-family: $font-family-extrabold;
-    margin:35px auto 50px;
+    margin: 35px auto 50px;
   }
   p,
   ul {
     max-width: 940px;
-    margin:0 auto 20px;
+    margin: 0 auto 20px;
   }
   a {
     text-decoration: underline;
@@ -151,54 +186,60 @@
     display: inline-block;
     font-size: 20px;
     padding: 5px;
-    margin:50px 0 0;
-    color:#000000;
-    background-image: linear-gradient(#000000, #000000);
+    margin: 50px 0 0;
+    color: #000000;
     @media #{$screen-tablet} {
       font-size: 25px;
       padding: 14px 42px;
-      margin:100px 0 0;
+      margin: 100px 0 0;
+      background-image: linear-gradient(#000000, #000000);
     }
     @media #{$screen-desktop} {
-      margin:145px 0 0;
+      margin: 145px 0 0;
     }
     &:hover {
-      background-size: 100% 100%;
-      color: #FFF;
       text-decoration: none;
-      &:after {
-        border-top: 30px solid transparent;
-        border-left: 30px solid #000;
-        border-bottom: 30px solid transparent;
-      }
-      &:before {
-        border-top: 30px solid transparent;
-        border-right: 30px solid #000;
-        border-bottom: 30px solid transparent;
+      @media #{$screen-tablet} {
+        background-size: 100% 100%;
+        color: #FFF;
+        &:after {
+          border-top: 30px solid transparent;
+          border-left: 30px solid #000;
+          border-bottom: 30px solid transparent;
+          transition: 0.2s ease-in-out;
+          transition-delay: 0.4s;
+        }
+        &:before {
+          border-top: 30px solid transparent;
+          border-right: 30px solid #000;
+          border-bottom: 30px solid transparent;
+          transition: 0.2s ease-in-out;
+          transition-delay: 0.4s;
+        }
       }
     }
     &:before {
-      content:"";
+      content: "";
       position: absolute;
       left: -32px;
-      top:0;
+      top: 0;
       bottom: 0;
       margin: auto;
       width: 33px;
       height: 63px;
-      background:url(../images/arrow_left_big.png) no-repeat left center;
+      background: url(../images/arrow_left_big.png) no-repeat left center;
       transition-delay: .4s;
     }
     &:after {
-      content:"";
+      content: "";
       position: absolute;
       right: -31px;
-      top:0;
+      top: 0;
       bottom: 0;
       margin: auto;
       width: 33px;
       height: 63px;
-      background:url(../images/arrow_right_big.png) no-repeat right center;
+      background: url(../images/arrow_right_big.png) no-repeat right center;
       transition-delay: .4s;
     }
   }
@@ -207,56 +248,83 @@
 // Campaign paragraph 
 .paragraph--type--campaign {
   position: relative;
-  color:#FFF;
+  color: #FFF;
   font-size: 30px;
   margin: 0;
+  background-color: #000;
   @media #{$screen-tablet} {
     font-size: 50px;
   }
   @media #{$screen-desktop} {
-    font-family: 80px;
+    font-size: 80px;
   }
   video {
     width: 100% !important;
     height: 100% !important;
   }
   .campaign-bg {
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.5;
+
     &:after {
       content: "";
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    img {
+
     }
   }
   .campaign-content {
     position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right: 0;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
     width: 100%;
-    height: 80%;
     margin: auto;
     text-align: center;
     @media #{$screen-tablet} {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       width: 60%;
       height: 50%;
+      -webkit-transform: translateX(0) translateY(0);
+      -moz-transform: translateX(0) translateY(0);
+      -ms-transform: translateX(0) translateY(0);
+      -o-transform: translateX(0) translateY(0);
+      transform: translateX(0) translateY(0);
     }
     h3 {
       font-family: $font-family-base;
       color: #fff;
       font-size: 16px;
-      margin:0 auto 15px;
+      margin: 0 auto 15px;
       @media #{$screen-tablet} {
         font-size: 20px;
         margin: 0 auto 45px;
       }
     }
     a {
-      float: left; 
+      float: left;
       color: #FFF;
       font-size: 20px;
       @media #{$screen-tablet} {
@@ -264,22 +332,17 @@
       }
     }
   }
-  .field--name-field-image {
-    img {
-      width: 100%;
-    }
-  }
   .field--name-field-subtitle {
-    font-family:$font-family-extrabold;
+    font-family: $font-family-extrabold;
     margin-top: 5px;
     @media #{$screen-tablet} {
-      margin-top:15px;
+      margin-top: 15px;
     }
   }
   .field--name-field-button {
     margin-top: 10px;
     @media #{$screen-tablet} {
-      margin-top:50px;
+      margin-top: 50px;
     }
     @media #{$screen-desktop} {
       margin-top: 80px;
@@ -291,13 +354,13 @@
     a {
       position: absolute;
       bottom: 15px;
-      left:0;
+      left: 0;
       right: 0;
       margin: auto;
       width: 61px;
       height: 31px;
-      background:url(../images/arrow_down_small.png) no-repeat center center;
-      float:left;
+      background: url(../images/arrow_down_small.png) no-repeat center center;
+      float: left;
       text-indent: -9999px;
       @media #{$screen-tablet} {
         bottom: 50px;
@@ -309,7 +372,6 @@
   }
 }
 
-// Clients paragraph
 .paragraph--type--client {
   background-color: $gray-light;
   text-align: center;
@@ -325,14 +387,14 @@
     font-size: 40px;
     color: $black;
     text-transform: uppercase;
-    margin:40px 0 50px;
+    margin: 40px 0 50px;
     @media #{$screen-tablet} {
       font-size: 45px;
-      margin:45px 0 55px;
+      margin: 45px 0 55px;
     }
     @media #{$screen-desktop} {
       font-size: 80px;
-      margin:90px 0 55px;
+      margin: 90px 0 55px;
     }
     @media #{$screen-lg-desktop} {
       font-size: 100px;
@@ -345,13 +407,13 @@
     }
   }
   .field--name-field-clients {
-    float:left;
+    float: left;
     width: 100%;
     padding: 10px 0 30px;
   }
   .client {
-    float:left;
-    width: 50%;
+    float: left;
+    width: 33.3333%;
     @media #{$screen-tablet} {
       width: 20%;
     }
@@ -362,14 +424,31 @@
       position: relative;
       margin: 50px 0;
       .field--name-field-logo-hover {
-        display:none;
+        position: absolute;
+        top: 0;
+      }
+      .field--name-field-logo {
+        img {
+          opacity: 0;
+        }
+      }
+      &:hover {
+        .field--name-field-logo-hover {
+          img {
+            opacity: 0;
+          }
+        }
+        .field--name-field-logo {
+          img {
+            opacity: 1;
+          }
+        }
       }
       img {
-        -webkit-transition: all .25s ease;
-        -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-        -o-transition: all .25s ease;
-        transition: all .25s ease;
+        -webkit-transition: opacity .7s ease-in-out;
+        -moz-transition: opacity .7s ease-in-out;
+        -o-transition: opacity .7s ease-in-out;
+        transition: opacity .7s ease-in-out;
       }
     }
   }
@@ -383,7 +462,7 @@
   padding: 100px 15px;
   margin: auto;
   @media #{$screen-tablet} {
-    padding: 160px 0;
+    padding: 100px 0;
   }
   .field--name-field-title {
     font-family: $font-family-medium;
@@ -402,7 +481,7 @@
   }
   .field--name-field-left-column {
     font-family: $font-family-light;
-    float:left;
+    float: left;
     width: 100%;
     @media #{$screen-tablet} {
       width: 50%;
@@ -441,7 +520,7 @@
   }
   .field--name-field-right-column {
     font-family: $font-family-light;
-    float:left;
+    float: left;
     width: 100%;
     @media #{$screen-tablet} {
       width: 50%;
@@ -481,38 +560,43 @@
 }
 
 // Video paragraph 
-.paragraph--type--video  {
-  position: relative;
-  clear:left;
-  padding: 100px 0;
-  @media #{$screen-tablet} {
-    padding: 150px 0;
-  }
-  @media #{$screen-desktop} {
-    padding: 195px 0 180px;
-  }
-  .video-embed-field-responsive-video {
-    max-height: 675px;
-    overflow: hidden;
-    margin: 0;
-  }
-  iframe {
+.paragraph--type--video {
+  .field--name-field-video {
+    position: relative;
+    text-align: center;
     width: 100%;
-    max-height: 675px;
-    margin: auto;
+    padding-bottom: 41.66666667%;
+    overflow: hidden;
+    max-width: 100%;
+    height: 88vh;
     @media #{$screen-tablet} {
-      width: 80%;
+      height: 100vh;
+    }
+
+    iframe {
+      position: absolute;
+      width: 90%;
+      height: initial;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translatey(-50%);
+      -moz-transform: translateX(-50%) translatey(-50%);
+      transform: translateX(-50%) translatey(-50%);
+      @media #{$screen-tablet} {
+        width: 70%;
+        height: 70%;
+      }
     }
   }
   .field--name-field-caption {
     position: absolute;
-    left:15px;
+    left: 15px;
     bottom: 15px;
     font-family: $font-family-light;
     font-size: 20px;
-    color:#FFF;
+    color: #FFF;
     @media #{$screen-tablet} {
-      left:60px;
+      left: 60px;
       bottom: 50px;
     }
     @media #{$screen-desktop} {
@@ -523,32 +607,42 @@
 
 // Image paragraph 
 .paragraph--type--image {
+  height: 88vh;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @media #{$screen-tablet} {
+    height: 100vh;
+  }
   .field--name-field-image {
     position: relative;
     &:after {
       content: "";
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
     }
     img {
-      width: 100%;
+      display: none;
     }
   }
   .field--name-field-caption {
     position: absolute;
-    left:15px;
+    left: 15px;
     bottom: 15px;
     font-family: $font-family-light;
     font-size: 20px;
-    color:#FFF;
+    color: #FFF;
     @media #{$screen-tablet} {
       left: 60px;
-      bottom:50px;
+      bottom: 50px;
     }
     @media #{$screen-desktop} {
       left: 95px;
@@ -561,7 +655,7 @@
   margin: auto;
   padding: 100px 0;
   @media #{$screen-tablet} {
-    padding: 160px 0 205px;
+    padding: 100px 0 205px;
   }
   .group-header {
     text-align: center;
@@ -581,7 +675,7 @@
     }
   }
   .group-left {
-    width:100%;
+    width: 100%;
     padding: 0 15px;
     @media #{$screen-tablet} {
       width: 40%;
@@ -593,7 +687,7 @@
         font-size: 30px;
       }
       &:after {
-        content:":";
+        content: ":";
       }
     }
     .field--item {
@@ -627,4 +721,54 @@
       }
     }
   }
+}
+
+.border {
+  position: fixed;
+  background: #fff;
+  z-index: 1001;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) 1.2s;
+  transform: scale(1);
+}
+.border--top {
+  left: 0;
+  width: 100%;
+  height: 15px;
+  top: 0;
+  transform-origin: top;
+}
+.border--bottom {
+  left: 0;
+  width: 100%;
+  height: 15px;
+  bottom: 0;
+  transform-origin: bottom;
+}
+.page-enter-animation {
+  .border--top {
+    transform: scaleY(0);
+  }
+  .border--bottom {
+    transform: scaleY(0);
+  }
+  .border--left {
+    transform: scaleX(0);
+  }
+  .border--right {
+    transform: scaleX(0);
+  }
+}
+.border--left {
+  top: 0;
+  width: 15px;
+  height: 100%;
+  left: 0;
+  transform-origin: left;
+}
+.border--right {
+  top: 0;
+  width: 15px;
+  height: 100%;
+  right: 0;
+  transform-origin: right;
 }

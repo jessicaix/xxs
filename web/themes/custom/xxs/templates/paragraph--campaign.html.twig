@@ -48,34 +48,8 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <div class="cross">
-      <div class="left-top">
-        <svg style="width: 100%; height: 100%">
-          <line x1="100%" y1="100%" x2="0" y2="0"
-                style="stroke:rgb(255,255,255);stroke-width:2"/>
-        </svg>
-      </div>
-      <div class="right-top">
-        <svg style="width: 100%; height: 100%">
-          <line x1="0" y1="100%" x2="100%" y2="0"
-                style="stroke:rgb(255,255,255);stroke-width:2"/>
-        </svg>
-      </div>
-      <div class="left-bottom">
-        <svg style="width: 100%; height: 100%">
-          <line x1="0" y1="100%" x2="100%" y2="0"
-                style="stroke:rgb(255,255,255);stroke-width:2"/>
-        </svg>
-      </div>
-      <div class="right-bottom">
-        <svg style="width: 100%; height: 100%">
-          <line x1="100%" y1="100%" x2="0" y2="0"
-                style="stroke:rgb(255,255,255);stroke-width:2"/>
-        </svg>
-      </div>
-    </div>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
   </div>
 {% endblock paragraph %}

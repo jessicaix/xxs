@@ -56,6 +56,20 @@ input {
   border-radius: 0 !important;
 }
 
+// LOGIN FORM
+.path-user-login {
+  background-color: #F3F3F3;
+  .main-container {
+    padding-top: 150px;
+    min-height:600px;
+    .user-login-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+}
+
+
 // Checkboxes / radio buttons.
 .checkbox, .radio {
   // Remove top/bottom margins when in table context, because this is most

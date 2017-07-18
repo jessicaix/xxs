@@ -13,6 +13,13 @@ body {
 	}
 }
 
+html {
+  width: 100%;
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+
 ul,
 ol,
 p,
@@ -84,6 +91,8 @@ img {
   text-align: center;
   border: none;
   margin:130px 0 45px;
+  float:  left;
+  width: 100%;
   @media #{$screen-tablet} {
     font-size: 45px;
   }
