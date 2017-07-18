@@ -1,6 +1,9 @@
 global-styling:
   css:
     theme:
+      stylesheets/component.css: {}
+      stylesheets/animations.css: {}
+      stylesheets/nav.css: {}
       stylesheets/style.css: {}
 
 bootstrap-scripts:
@@ -26,7 +29,34 @@ main:
 
 menu:
   js:
-    js/snap.svg-min.js: {}
     js/modernizr.custom.js: {}
-    js/classie.js: {}
+    js/velocity.min.js: {}
     js/menu.js: {}
+
+fullpage:
+  css:
+    theme:
+      stylesheets/jquery.fullPage.css: {}
+  js:
+    js/scrolloverflow.js: {}
+    js/jquery.fullpage.extensions.min.js: {}
+
+wow:
+  css:
+    theme:
+      stylesheets/animate.css: {}
+  js:
+    js/wow.js: {}
+
+swiper:
+  css:
+    theme:
+      stylesheets/slick.css: {}
+  js:
+    js/slick.min.js: {}
+    js/caroussel.js: {}
+
+maps:
+  js:
+    //maps.googleapis.com/maps/api/js?key=AIzaSyBieLAWaiKSzWx1g0d2Mo1Z4-nX0xE4HXs: {type: external}
+    js/snazzymaps.js: {}

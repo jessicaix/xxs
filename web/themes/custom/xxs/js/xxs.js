@@ -1,6 +1,6 @@
 /**
  * @file
- * sportmarketingbureau.js
+ * xxs.js
  *
  * Add jQuery to the theme
  */
@@ -11,130 +11,147 @@
     $('.paragraph--type--text .field--name-field-text, .paragraph--type--two-column-text, .paragraph--type-project-results').addClass('container');
     $('.path-frontpage .section:nth-child(6)').removeClass('fp-noscroll');
     $('.field--item:nth-child(2) .paragraph').attr('id', 'scroll-to-paragraph');
-    $('.page-node-type-like .paragraph--type--header .header-content').prepend($('.page-node-type-like .field--name-node-post-date'));  
-    $('.field--name-field-paragraphs').append($('#block-views-block-likes-block-1'));  
-    	// Fullpage
-	
-	$(document).ready(function() {
-  	$('#block-views-block-likes-block-1').addClass('section');
-    $('#fullpage').fullpage({
-		//Navigation
-		menu: '#menu',
-		lockAnchors: false,
-		anchors:['firstPage', 'secondPage'],
-		navigation: false,
-		navigationPosition: 'right',
-		navigationTooltips: ['firstSlide', 'secondSlide'],
-		showActiveTooltip: false,
-		slidesNavigation: false,
-		slidesNavPosition: 'bottom',
+    $('.page-node-type-like .paragraph--type--header .header-content').prepend($('.page-node-type-like .field--name-node-post-date'));
 
-		//Scrolling
-		css3: true,
-		scrollingSpeed: 700,
-		autoScrolling: true,
-		fitToSection: true,
-		fitToSectionDelay: 1000,
-		scrollBar: true,
-		easing: 'easeInOutCubic',
-		easingcss3: 'ease',
-		loopBottom: false,
-		loopTop: false,
-		loopHorizontal: true,
-		continuousVertical: false,
-		continuousHorizontal: false,
-		scrollHorizontally: false,
-		interlockedSlides: false,
-		dragAndMove: false,
-		offsetSections: false,
-		resetSliders: false,
-		fadingEffect: false,
-		normalScrollElements: '#element1, .element2',
-		scrollOverflow: true,
-		scrollOverflowReset: false,
-		scrollOverflowOptions: null,
-		touchSensitivity: 15,
-		normalScrollElementTouchThreshold: 5,
-		bigSectionsDestination: null,
-
-		//Accessibility
-		keyboardScrolling: true,
-		animateAnchor: true,
-		recordHistory: true,
-
-		//Design
-		controlArrows: true,
-		verticalCentered: true,
-		sectionsColor : ['#ccc', '#fff'],
-		paddingTop: '0',
-		paddingBottom: '0',
-		fixedElements: '#header, .footer',
-		responsiveWidth: 0,
-		responsiveHeight: 0,
-		responsiveSlides: false,
-		parallax: false,
-		parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-
-		//Custom selectors
-		sectionSelector: '.section',
-		slideSelector: '.slide',
-
-		lazyLoading: true,
-
-		//events
-		onLeave: function(index, nextIndex, direction){},
-		afterLoad: function(anchorLink, index){},
-		afterRender: function(){},
-		afterResize: function(){},
-		afterResponsive: function(isResponsive){},
-		afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-	});
-});
-      // Scroll to top
-if ($('#back-to-top').length) {
-    var scrollTrigger = 100, // px
-        backToTop = function () {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > scrollTrigger) {
-                $('#back-to-top').addClass('show');
-            } else {
-                $('#back-to-top').removeClass('show');
-            }
-        };
-    backToTop();
-    $(window).on('scroll', function () {
-        backToTop();
+    $('.campaign-bg, .paragraph--type--image').not($('#block-views-block-work-block-1 .campaign-bg')).each(function() {
+      var img_url = $(this).find('img').attr("src");
+      $(this).css('background-image', 'url(' + img_url + ')');
     });
-    $('#back-to-top').on('click', function (e) {
+
+    //Initial load of page
+    $(document).ready(sizeContent);
+
+    //Every resize of window
+    $(window).resize(sizeContent);
+
+    //Dynamically assign height
+    function sizeContent() {
+      var newHeight = $("html").height() + "px";
+      $(".path-frontpage .field--item:first-child .paragraph--type--header").css("height", newHeight);
+      $(".path-frontpage .field--item:nth-child(2) .paragraph--type--text").css("top", newHeight);
+    }
+
+    //Fade header on scroll
+    $(window).scroll(function(){
+      $(".path-frontpage .field--item:first-child .paragraph--type--header .header-content").css("opacity", 1 - $(window).scrollTop() / 500);
+    });
+
+    if ($('#block-newslettersignup').length) {
+      var randomnr = Math.floor(Math.random()*(4-1+1)+1);
+      var cta = '#cta'+randomnr;
+      console.log(cta);
+      $('#block-newslettersignup').find(cta).css('display', 'block');
+    }
+
+    //Homepage header background scrolling
+    $(window).scroll(function(){
+      var $maxScroll=500;
+      var $maxScale=1;
+      var $x=$(window).scrollTop()/100+1;
+      if($(window).scrollTop()>$maxScroll) $x=$maxScale;
+      $('.path-frontpage .field--item:first-child .paragraph--type--header .header-bg').css({transform: 'scale('+$x+','+$x+')'});
+      $('.path-frontpage .field--item:first-child .paragraph--type--header .header-bg').css({transform: 'scale('+$x+','+$x+')'});
+    });
+
+    //Hompage border
+    $(".path-frontpage .header-border").delay(500).queue(function(next) {
+      $(this).addClass("passpature");
+      next();
+    });
+
+
+    var wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+
+    //Homepage page transition
+    $("#preloader").delay(800).queue(function(next) {
+      $(this).addClass("transition-off");
+      next();
+    });
+
+    //Cross transition
+    $(".cross-wrapper .left-top, .cross-wrapper .right-top, .cross-wrapper .left-bottom, .cross-wrapper .right-bottom, .cross-wrapper .campaign-content, .cross-wrapper .views-field-field-email").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+      $(this).addClass('animated');
+    });
+
+    $('#block-views-block-likes-block-1').addClass('section');
+
+    $('.footer').prepend($('#block-views-block-pager-likes-block-1, #block-views-block-pager-likes-block-2, #block-views-block-people-block-1'));
+    $('.path-frontpage .like.section').append($('#block-views-block-likes-block-1'));
+    $('.field--name-field-paragraphs').append($('.path-frontpage .like.section, #block-views-block-work-block-1, #block-views-block-jobs-block-1, .footer'));
+
+    $('.field--name-field-scroll-down').click(function(){
+      $.fn.fullpage.moveSectionDown();
+    });
+
+    $('#fullpage').fullpage({
+      verticalCentered: false,
+      scrollingSpeed: 800,
+      parallax: true,
+      parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+      css3: true,
+      allowPageScroll: true,
+      scrollOverflow:true,
+      afterRender: function(){
+        if ($('.field--name-field-bg-video').length) {
+          $('.field--name-field-bg-video video')[0].play();
+        }
+      }
+    });
+
+    // $( "#block-views-block-work-block-1 .views-row" ).click(function() {
+    //   var url = $(this).find('.views-field-view-node a').attr('href');
+    //   window.location.href = url;
+    // });
+
+    $("#block-views-block-work-block-1").on("click", ".views-row", function () {
+      var url = $(this).find('.views-field-view-node a').attr('href');
+      window.location.href = url;
+    });
+
+    // Scroll to top
+    if ($('#back-to-top').length) {
+      var scrollTrigger = 100, // px
+        backToTop = function () {
+          var scrollTop = $(window).scrollTop();
+          if (scrollTop > scrollTrigger) {
+            $('#back-to-top').addClass('show');
+          } else {
+            $('#back-to-top').removeClass('show');
+          }
+        };
+      backToTop();
+      $(window).on('scroll', function () {
+        backToTop();
+      });
+      $('#back-to-top').on('click', function (e) {
         e.preventDefault();
         $('html,body').animate({
-            scrollTop: 0
+          scrollTop: 0
         }, 700);
-    });
-}
-    
+      });
+    }
+
     // Scroll to anchor
     $('a[href^="."]').on('click',function (e) {
-	    e.preventDefault();
+      e.preventDefault();
 
-	    var target = this.hash;
-	    var $target = $(target);
+      var target = this.hash;
+      var $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
-	
-	    
-  // Change value of select box
-  //document.getElementById('edit-field-category-target-id').options[0].innerHTML = 'Filter work';
-	
-
-  
-  
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+        window.location.hash = target;
+      });
+    });
   })
-
 }(jQuery);

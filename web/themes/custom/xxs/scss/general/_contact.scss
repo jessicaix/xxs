@@ -47,7 +47,7 @@
     .social-media {
       position: absolute;
       left:15px;
-      bottom:50px;
+      bottom:135px;
       font-size: 15px;
       text-transform: uppercase;
       @media #{$screen-tablet} {
@@ -64,27 +64,28 @@
         text-decoration: none;
         margin-right: 10px;
         &.facebook {
-          background:url(../images/facebook.png) no-repeat center center;
+          background:url(../images/xxs-facebook.png) no-repeat center center;
+          opacity: 1;
           &:hover {
-            background: url(../images/facebook_hover.png) no-repeat center center;
+            opacity: .8;
           }
         }
         &.linkedin {
-          background:url(../images/linkedin.png) no-repeat center center;
+          background:url(../images/xxs-linkedin.png) no-repeat center center;
           &:hover {
-            background:url(../images/linkedin_hover.png) no-repeat center center;
+            opacity: .8;
           }
         }
         &.instagram {
-          background:url(../images/instagram.png) no-repeat center center;
+          background:url(../images/xxs-instagram.png) no-repeat center center;
           &:hover {
-            background:url(../images/instagram_hover.png) no-repeat center center;
+            opacity: .8;
           }
         }
         &.twitter {
-          background:url(../images/twitter.png) no-repeat center center;
+          background:url(../images/xxs-twitter.png) no-repeat center center;
           &:hover {
-            background:url(../images/twitter_hover.png) no-repeat center center;
+            opacity: .8;
           }
         }         
       }
@@ -113,14 +114,30 @@
       text-align: center;
       text-decoration: none;
       transition:all 0.5s ease-in-out;
+      cursor: pointer;
       @media #{$screen-tablet} {
-        bottom: 50px;
+        bottom: 80px;
       }
       &:hover {
         transform: translateY(30%);
       }  
       &.career {
         display: none;
+      }
+    }
+  }
+  #map {
+    height: 100vh;
+    width: 100%;
+  }
+  .field--item {
+    &:nth-child(2) {
+      .paragraph--type--text {
+        padding: 0 0 15px;
+        .container {
+          width: 100%;
+          padding: 0;
+        }
       }
     }
   }
